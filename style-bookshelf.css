@@ -1,0 +1,83 @@
+.bookshelf {
+	display: flex;
+	height: 100vh; /* Full viewport height */
+	overflow: hidden; /* Prevent overflow from container */
+	background-color: #ffffff; /* Light mode background */
+}
+
+.logo-section {
+	flex: 1; /* Takes up half the width */
+	background-color: #ffffff; /* Light mode background */
+	overflow: hidden; /* Prevent overflow from image section */
+}
+.logo-section img {
+	width: 100%; /* Make image fill the section */
+	height: auto; /* Maintain aspect ratio */
+}
+
+.grid-section {
+	flex: 1; /* Takes up half the width */
+	display: grid;
+	grid-template-columns: repeat(6, 1fr); /* 2 columns of equal width */
+	gap: 1vh; /* Space between grid items */
+	padding: 1vh; /* Padding inside the grid section */
+	background-color: #dcdbdb; /* Light mode background */
+	height: 100%; /* Full height */
+	overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.grid-item {
+	padding: 0vh; /* Padding inside grid items */
+	background-color: #f9f9f9; /* Light mode item background */
+	border: 0px solid #ccc; /* Optional border for visibility */
+	height: 17vh;
+	text-align: left; /* Left align text */
+	font-size: 3vh;
+	text-align: center;
+	overflow: hidden; /* Prevent overflow from image section */
+	border-radius: 0.5vh;
+}
+
+.grid-item img {
+	width: 100%; /* Make image fill the section */
+	height: auto; /* Maintain aspect ratio */
+	align-items: center;
+	object-fit: contain;
+}
+
+.header {
+	font-weight: bold; /* Bold text for headers */
+	background-color: #f2f2f2; /* Light gray background for headers */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+	background-color: #121212; /* Dark mode background */
+	color: #ffffff; /* Dark mode text color */
+}
+
+body.dark-mode .bookshelf {
+	background-color: #121212; /* Dark mode background */
+	color: #ffffff; /* Dark mode text color */
+}
+
+body.dark-mode .logo-section {
+	background-color: #000000; /* Dark mode background for image section */
+}
+
+body.dark-mode .logo-section img {
+	background-color: #1e1e1e; /* Dark mode background for image section */
+}
+
+body.dark-mode .grid-section {
+	background-color: #302e2e; /* Dark mode background for grid section */
+}
+
+body.dark-mode .grid-item {
+	background-color: #2a2a2a; /* Dark mode item background */
+	border: 1px solid #444; /* Dark mode border */
+}
+
+body.dark-mode .header {
+	background-color: #333; /* Dark mode background for headers */
+}

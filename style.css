@@ -1,0 +1,732 @@
+/* Paste the @import rule for the Google Font here */
+@import url("https://fonts.googleapis.com/css2?family=Klee+One&display=swap");
+@font-face {
+	font-family: "Klee One"; /* This is the name you'll use to refer to the font */
+	src: url("font/kleeone_regular.ttf") format("truetype"); /* Adjust the path and format as needed */
+}
+
+/* Media query for landscape orientation */
+@media screen and (orientation: landscape) {
+	#container {
+		width: 100vw;
+		max-width: 177.77vh;
+		/*max-width: 1920px;*/
+		height: 56.25vw; /* 1080p aspect ratio: 1080 / 1920 * 100 = 56.25 */
+		/*max-height: 1080px;*/
+	}
+}
+/* Apply these styles when the screen width is less than the height (portrait mode) */
+@media screen and (orientation: portrait) {
+	body {
+		display: none;
+	}
+}
+
+/* Media query to adjust styles for smaller screens */
+@media screen and (max-width: 768px) {
+	#content {
+		height: 100%; /* Adjust the aspect ratio for smaller screens */
+		max-height: 720px; /* Adjust the maximum height for smaller screens */
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #000000; /* Set your desired background color here */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+	font-family: "Klee One", cursive;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+	background-color: #121212; /* Dark mode background */
+	color: #ffffff; /* Dark mode text color */
+}
+
+#container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: 56.25vw; /* 1080p aspect ratio: 1080 / 1920 * 100 = 56.25 */
+	max-height: 100vh; /* Set maximum height to avoid overflowing the viewport */
+	max-width: 100%; /* Prevent the container from exceeding the viewport width */
+	padding-bottom: 56.25%; /* 9/16 * 100% = 56.25% for a 16:9 aspect ratio */
+
+	/*max-width: 100vw;*/
+	margin: 0.2vw;
+	overflow: hidden;
+
+	/* Add your website content styles here */
+	background-color: #000000;
+
+	display: grid;
+	grid-template-columns: 9vw 3vw 88vw;
+
+	grid-gap: 0vw;
+	grid-template-areas: "sidebar-left gap-left content-center";
+
+	.gap-left {
+		grid-area: gap-left;
+		height: 100%;
+		background-color: #0b0b0b;
+		z-index: 0;
+	}
+
+	.sidebar-left {
+		grid-area: sidebar-left;
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		z-index: 2;
+		border-radius: 0.15vw;
+		box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.836),
+			0 0.6vw 0.6vw rgba(0, 0, 0, 0.23);
+		box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	}
+
+	.content-center {
+		grid-area: content-center;
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		width: 100%;
+		grid-gap: 0vw;
+		border: 0vw;
+		z-index: 3;
+	}
+}
+
+/* Dark Mode Styles */
+body.dark-mode #container .gap-left {
+	background-color: #2b2b2d;
+}
+
+/* Add your additional styles with relative units */
+p {
+	font-size: 2vw; /* Example: set the font size relative to the viewport width */
+	line-height: 1.5;
+}
+
+.small-text {
+	font-size: 1.7vw;
+	text-align: left;
+}
+
+h1 {
+	font-size: 3vw; /* Example: set the font size relative to the viewport width */
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 2.7vw;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 2.5vw;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+h5 {
+	font-size: 1.5vw;
+	font-weight: bold;
+}
+
+h6 {
+	font-size: 1vw;
+	font-weight: bold;
+}
+
+small {
+	font-size: 0.6vw;
+}
+
+.item {
+	background-color: #000000;
+	/* background-image: linear-gradient(130deg, #f4f3f7 0%, #1EAAFC 85%, #3EDFD7 100%); */
+	/* background-image: linear-gradient(130deg, #bcb8c4 0%, #9da5c9 55%, #bcb8c4 100%); */
+	box-shadow: none;
+	color: #ffffff;
+	border-radius: 0vw;
+	border: 0vw solid #171717;
+
+	display: inline-grid;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.1vw;
+	font-weight: bold;
+}
+
+.header {
+	background-color: #f1faff;
+	background-image: linear-gradient(160deg, #eeedf1 0%, #3c1000 127%);
+	box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.836),
+		0 0.6vw 0.6vw rgba(0, 0, 0, 0.23);
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	border: 0vw;
+	text-align: center;
+	border-radius: 0.15vw;
+	margin: 0.1vw;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.footer {
+	background-color: #f1faff;
+	background-image: linear-gradient(160deg, #eeedf1 0%, #3c1000 127%);
+	box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.836),
+		0 0.6vw 0.6vw rgba(0, 0, 0, 0.23);
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	border: 0vw;
+	text-align: center;
+	border-radius: 0.15vw;
+	margin: 0.1vw;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.sidebar {
+	background-image: linear-gradient(203deg, #bdbbd7 0%, #0c0431 90%);
+	box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.836),
+		0 0.06vw 0.06vw rgba(0, 0, 0, 0.23);
+	padding: 0.1vw;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .sidebar {
+	background-image: linear-gradient(203deg, #03020f 0%, #271e4a 90%);
+}
+
+.menu-button {
+	height: 6.2vw;
+	width: 6.2vw;
+
+	background-image: linear-gradient(160deg, #210476 0%, #0e0135 127%);
+	border-radius: 0.1vw;
+	box-shadow: 0vw 0.1vw 0.5vw rgba(0, 0, 0, 0.5);
+	border: 0vw;
+	color: #fffaf6;
+	border-radius: 0.15vw;
+
+	font-family: "Klee One", cursive;
+
+	object-fit: contain;
+
+	display: inline-flex;
+	justify-content: center; /* center the content horizontally */
+	align-items: center; /* center the content vertically */
+
+	background-image: url("/Logo/White\ Logo.png");
+
+	background-size: cover;
+
+	border: none;
+}
+
+.menu-button:hover {
+	background-color: rgba(16, 3, 73, 0.884);
+	transition: background-color 0.2s;
+	height: 7vw;
+	width: 7vw;
+}
+
+.menu-button-small {
+	height: 5.1vw;
+	width: 5.2vw;
+
+	background-image: linear-gradient(160deg, #f0eff3 0%, #2f206a 127%);
+	border-radius: 0.1vw;
+	box-shadow: 0vw 0.1vw 0.5vw rgba(0, 0, 0, 0.5);
+	border: 0vw;
+	color: #000000;
+
+	border-radius: 0.15vw;
+
+	font-family: "Klee One", cursive;
+
+	object-fit: contain;
+
+	display: inline-flex;
+	justify-content: center; /* center the content horizontally */
+	align-items: center; /* center the content vertically */
+}
+
+.menu-button-small:hover {
+	background-color: rgba(28, 6, 124, 0.884);
+	transition: background-color 0.2s;
+	height: 5.5vw;
+	width: 5.6vw;
+}
+
+.audio-button-image {
+	border-radius: 5vw;
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	max-height: 3vw;
+	max-width: 3vw;
+	object-fit: contain;
+}
+
+.audio-button-image:hover {
+	background-color: rgba(173, 196, 255, 0.884);
+	transition: background-color 0.2s;
+	max-height: 3.3vw;
+	max-width: 3.3vw;
+}
+
+.audio-button-image-small {
+	border-radius: 3vw;
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	max-height: 1.5vw;
+	max-width: 1.5vw;
+	object-fit: contain;
+}
+
+.audio-button-image-small:hover {
+	background-color: rgba(181, 173, 255, 0.884);
+	transition: background-color 0.2s;
+	max-height: 2vw;
+	max-width: 2vw;
+}
+
+a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+
+	text-decoration: none;
+	color: initial;
+}
+
+.qr-button-image {
+	border-radius: 0vw;
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	max-height: 5.7vw;
+	max-width: 5.7vw;
+	object-fit: contain;
+}
+
+.qr-button-image:hover {
+	background-color: rgba(189, 173, 255, 0.884);
+	transition: background-color 0.2s;
+	max-height: 5.8vw;
+	max-width: 5.8vw;
+}
+
+.qr-button-image-large {
+	border-radius: 0vw;
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	max-height: 10.5vw;
+	max-width: 10.5vw;
+	object-fit: contain;
+}
+
+.qr-button-image-large:hover {
+	background-color: rgba(184, 173, 255, 0.884);
+	transition: background-color 0.2s;
+	max-height: 10.7vw;
+	max-width: 10.7vw;
+}
+
+.center-items {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.051);
+	border: none;
+
+	color: white;
+	font-family: "Klee One";
+	border: #eeedf1;
+	border-radius: 0.1vw;
+	border-radius: 0.8vw;
+	padding: 0.5vw;
+}
+
+.right-nav-buttons {
+	height: 5vw;
+	width: 10vw;
+	justify-content: left;
+
+	background-color: rgba(255, 255, 255, 0.308);
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+}
+
+.hidden-fill-image {
+	opacity: 0;
+	height: inherit;
+	width: inherit;
+	padding: 0;
+	margin: 0;
+	object-fit: fill;
+	display: block;
+	border: 0vw;
+	border-radius: 0vw;
+}
+
+.row > .column {
+	padding: 0 0.8vw;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.column {
+	float: left;
+	width: 25%;
+}
+
+.header-left {
+	height: 6vw;
+	width: 6vw;
+	z-index: 3;
+	margin: 0.5vw;
+	background: none;
+}
+
+.left-menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	grid-gap: 0.5vw;
+	padding: 0vw;
+	margin: 0.5vw;
+	margin-bottom: 1vw;
+	height: 37.25vw;
+}
+
+.footer-left-top {
+	height: 3vw;
+	width: 6vw;
+	z-index: 4;
+	margin: 0.5vw;
+	background: none;
+}
+.footer-left-bottom {
+	height: 3vw;
+	width: 6vw;
+	z-index: 4;
+	margin: 0.5vw;
+	background: none;
+}
+
+.left-menu-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.left-menu-image {
+	border-radius: 0.1vw;
+	box-shadow: 0vw 0.1vw 0.5vw rgba(0, 0, 0, 0.5);
+	height: 2.7vw;
+	width: 2.7vw;
+	background-color: #dfdefd;
+	object-fit: contain;
+}
+
+.left-menu-image:hover {
+	background-color: rgba(173, 178, 255, 0.884);
+	transition: background-color 0.2s;
+	height: 3.5vw;
+	width: 3.5vw;
+}
+
+.left-content {
+	padding: 0;
+	margin: 0;
+	height: inherit;
+	width: inherit;
+	border: 0vw;
+}
+
+.left-content-image {
+	height: inherit;
+	width: inherit;
+	padding: 0;
+	margin: 0;
+	border: 0vw;
+	object-fit: contain;
+	display: block;
+}
+
+.credit-text {
+	font-size: 1vw;
+	color: white;
+}
+
+/*
+.hidden-text {
+    box-shadow: -.20vw 0vw .2vw rgba(0, 0, 0, 0.19), 0 .06vw .20vw rgba(0, 0, 0, 0.23);
+    background-color: #FFFFFF;
+    color: black;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin: 1vw;
+    box-shadow: -.20vw 0vw .2vw rgba(0, 0, 0, 0.19), 0 .06vw .20vw rgba(0, 0, 0, 0.23);
+    border-radius: 1.5vw;
+    position: absolute;
+    top: 20%;
+    bottom: 15%;
+    left: 25%;
+    right: 15%;
+    z-index: 1;
+    text-align: center;
+    justify-content:center;
+    vertical-align: middle;
+    display: none;
+
+}*/
+
+.content-left-hidden {
+	background-color: transparent;
+	background-image: linear-gradient(
+		130deg,
+		#f4f3f7 0%,
+		#1eaafc 85%,
+		#3edfd7 100%
+	);
+	opacity: 0;
+	box-shadow: -0.2vw 0vw 0.2vw rgba(0, 0, 0, 0.19),
+		0 0.06vw 0.2vw rgba(0, 0, 0, 0.23);
+}
+
+/* The Modal (background) */
+.hidden-text {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 0%; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(255, 255, 255); /* Fallback color */
+	background-color: rgba(255, 255, 255, 0.9); /* Black w/ opacity */
+	color: white;
+	text-align: center;
+	justify-content: center;
+	vertical-align: middle;
+	z-index: 100;
+}
+
+/* Modal Content */
+.modal-content {
+	position: relative;
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	margin: auto;
+	padding: 1vw;
+	border: 0px solid #888;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.15s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* The Close Button */
+.close {
+	color: rgb(122, 31, 12);
+	position: absolute;
+	top: 0px;
+	right: 2vw;
+	font-size: 3vw;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #a52d08;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 2px 16px;
+	background-color: #000000;
+	color: white;
+}
+
+.modal-body {
+	padding: 2px 16px;
+	height: 90vh;
+}
+
+.modal-footer {
+	padding: 2px 16px;
+	background-color: #000000;
+	color: white;
+}
+
+/* The Play Button for Modal Content */
+.modal-play {
+	color: rgb(122, 31, 12);
+	position: absolute;
+	top: 1.7vh;
+	left: 2vw;
+	font-size: 3vw;
+	font-weight: bold;
+	/*z-index: 999;*/
+}
+
+.modal-play:hover,
+.modal-play:focus {
+	color: #a52d08;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.mySlides {
+	display: none;
+}
+
+.cursor {
+	cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+img {
+	margin-bottom: -4px;
+}
+
+.caption-container {
+	text-align: center;
+	background-color: black;
+	padding: 2px 16px;
+	color: white;
+}
+
+.demo {
+	opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+	opacity: 1;
+}
+
+img.hover-shadow {
+	transition: 0.3s;
+}
+
+.hover-shadow:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+	background-color: #121212; /* Dark mode background */
+	color: #ffffff; /* Dark mode text color */
+}
+
+body.dark-mode .image-section {
+	background-color: #1e1e1e; /* Dark mode background for image section */
+}
+
+body.dark-mode .grid-section {
+	background-color: #1e1e1e; /* Dark mode background for grid section */
+}
+
+body.dark-mode .grid-item {
+	background-color: #2a2a2a; /* Dark mode item background */
+	border: 1px solid #444; /* Dark mode border */
+}
+
+body.dark-mode .header {
+	background-color: #333; /* Dark mode background for headers */
+}

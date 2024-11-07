@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<link href="style.css" rel="stylesheet" />
+		<link href="slideshowsimple.css" rel="stylesheet" />
+		<meta
+			name="viewport"
+			content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Impress Magazine - Spring, 2024</title>
+		<link rel="icon" type="image/x-icon" href="nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="nav-images/logo.png" />
+		<script type="text/javascript" src="scripts.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+	</head>
+	<body>
+		<div id="viewport">
+			<div id="container">
+				<!-- Left Menu -->
+
+				<div class="item sidebar sidebar-left">
+					<div class="item header header-left">
+						<form>
+							<button
+								class="menu-button clickable"
+								type="submit"
+								formaction="../index.html"
+							></button>
+						</form>
+					</div>
+
+					<div class="left-menu">
+						<div class="left-menu-button">
+							<a href="index.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/front.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="1.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/1.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="1.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/2.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="3.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/3.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="3.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/4.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="5.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/5.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="5.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/6.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="cover.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/back.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="about.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/about.png"
+							/></a>
+						</div>
+					</div>
+					<div class="item footer footer-left-top">
+						<form>
+							<button
+								class="menu-button-small clickable"
+								type="submit"
+								formaction="1.html"
+							>
+								<h6>< Previous</h6>
+							</button>
+						</form>
+					</div>
+					<div class="item footer footer-left-bottom">
+						<form>
+							<button
+								class="menu-button-small clickable"
+								type="submit"
+								formaction="5.html"
+							>
+								<h6>Next ></h6>
+							</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="item gap-left"></div>
+
+				<div
+					class="item content-center"
+					style="
+						background-image: url('Web/page034.jpg');
+						background-size: contain;
+						background-position: left;
+						background-attachment: local;
+						background-repeat: no-repeat;
+						background-color: #000000;
+					"
+				>
+					<div class="center-items">
+						<!-- Buttons -->
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="PlayAndShow('audio1-0', 'text1-0', 'play1-0')"
+							style="position: absolute; top: 5vw; left: 89vw"
+						>
+							<img
+								id="play1-0"
+								class="audio-button-image clickable"
+								src="nav-images/play-g79150a13d_1280.png"
+							/>
+							<h6>&nbsp;&nbsp;Text</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="PlayAndShow('audio1-1', 'text1-1', 'play1-1')"
+							style="position: absolute; top: 11vw; left: 89vw"
+						>
+							<img
+								id="play1-1"
+								class="audio-button-image clickable"
+								src="nav-images/play-g79150a13d_1280.png"
+							/>
+							<h6>&nbsp;&nbsp;Poop Gallery</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="PlayAndShow('audio1-2', 'text1-2', 'play1-2')"
+							style="position: absolute; top: 17vw; left: 89vw"
+						>
+							<img
+								id="play1-2"
+								class="audio-button-image clickable"
+								src="nav-images/play-g79150a13d_1280.png"
+							/>
+							<h6>&nbsp;&nbsp;Fun Ways to Say Poop</h6>
+						</button>
+
+						<!-- Modal Text -->
+
+						<div class="items hidden-text" id="text1-0">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<div class="modal-header">
+									<span
+										class="close clickable"
+										onClick="ResetPlayAndShow('audio1-0', 'text1-0', 'play1-0'), ResetPlayAndShow('audio1-0', 'text1-0', 'play1-0a')"
+										>&times;</span
+									>
+									<span
+										class="modal-play clickable"
+										onClick="PlaySound('audio1-0', 'play1-0a')"
+										><img
+											id="play1-0a"
+											class="audio-button-image clickable"
+											src="nav-images/play-g79150a13d_1280.png"
+									/></span>
+								</div>
+
+								<div class="modal-body">
+									<h3>All About Poop!</h3>
+									<p
+										style="
+											font-size: 2.5vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 1vh;
+											padding: 1vh;
+										"
+									>
+										Welcome to wonderful world of poop! No, really, this page is
+										all about poop! You might think poop is pretty gross, but
+										it’s actually very important. Let’s learn why.
+									</p>
+									<h5 style="font-size: 3vh; margin: 0; padding: 0">
+										Poop is Great
+									</h5>
+									<p
+										style="
+											font-size: 2.5vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 1vh;
+											padding: 1vh;
+										"
+									>
+										Well, it’s not great if we have to clean it up. But poop is
+										really useful. Farmers use poop as food for plants. Without
+										poop, we wouldn’t have those delicious tomatoes and
+										cucumbers.
+									</p>
+									<h5 style="font-size: 3vh; margin: 0; padding: 0">
+										Poop is Delicious
+									</h5>
+									<p
+										style="
+											font-size: 2.5vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 1vh;
+											padding: 1vh;
+										"
+									>
+										Yes, poop is good food for all kinds of animals! Some
+										animals eat their own poop. Haven’t you ever seen a rabbit
+										or a dog eat their own poop? And a lot of insects eat poop,
+										too.
+									</p>
+									<h5 style="font-size: 3vh; margin: 0">Poop is Scientific</h5>
+									<p
+										style="
+											font-size: 2.5vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 1vh;
+											padding: 1vh;
+										"
+									>
+										Poop tells us a lot of things. Poop can tell us about the
+										food we eat and about our health. We can study poop from a
+										long time ago to learn about people from long ago.
+									</p>
+									<h5 style="font-size: 3vh; margin: 0">Poop is Amazing</h5>
+									<p
+										style="
+											font-size: 2.5vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 1vh;
+											padding: 1vh;
+										"
+									>
+										Remember, poop might seem silly, but it’s also super
+										important! So the next time you go to the bathroom, think
+										about how amazing your poop is!
+									</p>
+								</div>
+								<div class="modal-footer"></div>
+							</div>
+						</div>
+
+						<div class="items hidden-text" id="text1-1">
+							<!-- Modal content -->
+							<div class="modal-content-slideshow">
+								<div class="modal-header">
+									<span
+										class="close clickable"
+										onClick="ResetPlayAndShow('audio1-1', 'text1-1', 'play1-1')"
+										>&times;</span
+									>
+								</div>
+								<div class="modal-body">
+									<!-- Add the image slideshow here -->
+									<div id="slideshow-container" class="slideshow-container">
+										<!-- Full-width images with number text -->
+										<div class="mySlides">
+											<br /><img
+												src="Web\Poop\poop (1).jpg"
+												style="height: 60vh"
+											/>
+											<h5>This dog is pooping. Don't look!</h5>
+											<div class="numbertext">1 / 7</div>
+										</div>
+										<div class="mySlides">
+											<br /><img
+												src="Web\Poop\poop (2).jpg"
+												style="height: 60vh"
+											/>
+											<h5>
+												This is a dung beetle. It makes a house out of a ball of
+												poop! Did you know that dung beetles are in the same
+												family as stag beetles (<i>kuwagata</i>) and rhinoceros
+												beetles (<i>kabutomushi</i>)?
+											</h5>
+											<div class="numbertext">2 / 7</div>
+										</div>
+										<div class="mySlides">
+											<br /><img
+												src="Web\Poop\poop (3).jpg"
+												style="height: 60vh"
+											/>
+											<h5>
+												This is wombat poop. Wombats are animals native to
+												Australia. They make square poop. Square poop doesn't
+												roll away, so when a wombat poops, other animals know
+												that the wombat's house is there.
+											</h5>
+											<div class="numbertext">3 / 7</div>
+										</div>
+										<div class="mySlides">
+											<br /><img
+												src="Web\Poop\poop (4).jpg"
+												style="height: 60vh"
+											/>
+											<h5>
+												This is a hippopotamus. When the hippo poops, it spins
+												its tail so the poop will spray everywhere. This tells
+												other hippos that the hippo lives there. It also helps
+												them to cool down. And girl hippos are attracted to the
+												poop, too.
+											</h5>
+											<div class="numbertext">4 / 7</div>
+										</div>
+										<div class="mySlides">
+											<br /><img
+												src="Web\Poop\poop (5).jpg"
+												style="height: 60vh"
+											/>
+											<h5>
+												This is a pooping whale. Whale poop is often orange from
+												the krill that they eat. Whale poop is also very large.
+											</h5>
+											<div class="numbertext">5 / 7</div>
+										</div>
+										<div class="mySlides">
+											<br /><img
+												src="Web\Poop\poop (6).jpg"
+												style="height: 60vh"
+											/>
+											<h5>
+												The blue whale is the largest whale and largest animal
+												in the world. When it poops, it can poop out 200 liters
+												at a time. That's about the size of a medium-sized
+												refrigerator.
+											</h5>
+											<div class="numbertext">6 / 7</div>
+										</div>
+										<div class="mySlides">
+											<br /><img
+												src="Web\Poop\poop (7).jpg"
+												style="height: 60vh"
+											/>
+											<h5>
+												Climbing Mt. Everest is a big challenge! But there is a
+												lot of trash at the top of Mt. Everest. It's difficult
+												to take back garbage from the top of the mountain, so
+												people leave bottles, climbing gear, and even their poop
+												on the mountain. In fact, you can find the dead bodies
+												of other climbers there, too. Spooky!
+											</h5>
+											<div class="numbertext">7 / 7</div>
+										</div>
+
+										<!-- Navigation buttons -->
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+										<br />
+										<div class="modal-footer"></div>
+
+										<!-- The dots/circles -->
+										<div style="text-align: center">
+											<span
+												class="dot clickable"
+												onclick="currentSlide(1)"
+											></span>
+											<span
+												class="dot clickable"
+												onclick="currentSlide(2)"
+											></span>
+											<span
+												class="dot clickable"
+												onclick="currentSlide(3)"
+											></span>
+											<span
+												class="dot clickable"
+												onclick="currentSlide(4)"
+											></span>
+											<span
+												class="dot clickable"
+												onclick="currentSlide(5)"
+											></span>
+											<span
+												class="dot clickable"
+												onclick="currentSlide(6)"
+											></span>
+											<span
+												class="dot clickable"
+												onclick="currentSlide(7)"
+											></span>
+										</div>
+									</div>
+
+									<br />
+								</div>
+								<div class="modal-footer"></div>
+							</div>
+						</div>
+
+						<div class="items hidden-text" id="text1-2">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<div class="modal-header">
+									<span
+										class="close"
+										onClick="ResetPlayAndShow('audio1-2', 'text1-2', 'play1-2')"
+										>&times;</span
+									>
+								</div>
+								<div class="modal-body">
+									<h3>How to Say You Need To Poop</h3>
+
+									<ul
+										style="
+											font-size: 2.1vh;
+											text-align: left;
+											text-indent: 0.2vw;
+											margin-left: 4vw;
+										"
+									>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlayQuickSound('audio1-3a')"
+											></i
+											>&emsp;I have to use the restroom / bathroom / men's room
+											/ ladies' room.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3b')"
+											></i
+											>&emsp;I gotta go.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3c')"
+											></i
+											>&emsp;I need to make a number two.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3d')"
+											></i
+											>&emsp;I have to answer nature’s call.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3e')"
+											></i
+											>&emsp;I need to take a dump.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3f')"
+											></i
+											>&emsp;I'm going to bake some brownies.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3g')"
+											></i
+											>&emsp;I have to drop a deuce.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3h')"
+											></i
+											>&emsp;I have a Code Brown.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3i')"
+											></i
+											>&emsp;I gotta drop a bomb.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3j')"
+											></i
+											>&emsp;I need to clear the pipes.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3k')"
+											></i
+											>&emsp;I have to feed the fish.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3l')"
+											></i
+											>&emsp;I'm going to go lay a stink pickle.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3m')"
+											></i
+											>&emsp;I've gotta go to make room for lunch / dinner.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3n')"
+											></i
+											>&emsp;I have to go make my morning constitutional.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3o')"
+											></i
+											>&emsp;I need to relieve myself.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3p')"
+											></i
+											>&emsp;I'm going to release the Kraken.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3q')"
+											></i
+											>&emsp;I need to See a man about a horse.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3r')"
+											></i
+											>&emsp;I have to use the big, white telephone.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3s')"
+											></i
+											>&emsp;I'm going to go throw down some brown.
+										</li>
+										<li>
+											<i
+												class="fa fa-play-circle clickable"
+												onclick="PlaySound('audio1-3t')"
+											></i
+											>&emsp;I need to visit the porcelain throne.
+										</li>
+									</ul>
+
+									<p
+										style="
+											font-size: 2.5vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 0.1vh;
+											padding: 1vh;
+										"
+									>
+										These are examples of <i>euphemisms</i>. Euphemisms are
+										words that we use instead of using the real word. Which of
+										the euphemisms above do you like the best?
+									</p>
+								</div>
+								<div class="modal-footer"></div>
+							</div>
+						</div>
+
+						<!-- Audio -->
+
+						<audio id="audio1-0" class="playondemand">
+							<source src="./audio/audio2-0.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-1" class="playondemand">
+							<source src="./audio/audio2-1.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-2" class="playondemand">
+							<source src="./audio/audio2-2.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3a" class="playondemand">
+							<source src="./audio/audio2-2a.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3b" class="playondemand">
+							<source src="./audio/audio2-2b.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3c" class="playondemand">
+							<source src="./audio/audio2-2c.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3d" class="playondemand">
+							<source src="./audio/audio2-2d.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3e" class="playondemand">
+							<source src="./audio/audio2-2e.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3f" class="playondemand">
+							<source src="./audio/audio2-2f.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3g" class="playondemand">
+							<source src="./audio/audio2-2g.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3h" class="playondemand">
+							<source src="./audio/audio2-2h.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3i" class="playondemand">
+							<source src="./audio/audio2-2i.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3j" class="playondemand">
+							<source src="./audio/audio2-2j.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3k" class="playondemand">
+							<source src="./audio/audio2-2k.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3l" class="playondemand">
+							<source src="./audio/audio2-2l.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3m" class="playondemand">
+							<source src="./audio/audio2-2m.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3n" class="playondemand">
+							<source src="./audio/audio2-2n.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3o" class="playondemand">
+							<source src="./audio/audio2-2o.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3p" class="playondemand">
+							<source src="./audio/audio2-2p.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3q" class="playondemand">
+							<source src="./audio/audio2-2q.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3r" class="playondemand">
+							<source src="./audio/audio2-2r.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3s" class="playondemand">
+							<source src="./audio/audio2-2s.mp3" type="audio/mp3" />
+						</audio>
+						<audio id="audio1-3t" class="playondemand">
+							<source src="./audio/audio2-2t.mp3" type="audio/mp3" />
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			let slideIndex = 1;
+			showSlides(slideIndex);
+
+			// Next/previous controls
+			function plusSlides(n) {
+				showSlides((slideIndex += n));
+			}
+
+			// Thumbnail image controls
+			function currentSlide(n) {
+				showSlides((slideIndex = n));
+			}
+
+			function showSlides(n) {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				let dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {
+					slideIndex = 1;
+				}
+				if (n < 1) {
+					slideIndex = slides.length;
+				}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " active";
+			}
+		</script>
+	</body>
+</html>

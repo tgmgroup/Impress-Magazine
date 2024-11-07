@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<link href="style.css" rel="stylesheet" />
+		<link href="style-bookshelf.css" rel="stylesheet" />
+		<meta
+			name="viewport"
+			content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Impress Magazine</title>
+		<link rel="icon" type="image/x-icon" href="Impress-Summer-2024/nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="Impress-Summer-2024/nav-images/logo.png" />
+		<script type="text/javascript" src="scripts.js"></script>
+	</head>
+	<body>
+		<div id="viewport">
+			<div id="container">
+				<!-- Your website content goes here -->
+
+				<div class="item sidebar sidebar-left">
+					<div class="item header header-left">
+						<form>
+							<button
+								class="menu-button clickable"
+								type="submit"
+								formaction="index.html"
+							><h5>Impress<small></small></h5></button>
+						</form>
+					</div>
+
+					<div class="left-menu">
+						<div class="left-menu-button"></div>
+						<div class="left-menu-button"></div>
+						<div class="left-menu-button"></div>
+						<div class="left-menu-button">
+							<form>
+								<button
+									id="dark-mode-toggle"
+									class="menu-button-small clickable"
+								>
+									<h6>Light / Dark<br /><small>明るく・暗く</small></h6>
+								</button>
+							</form>
+						</div>
+
+						<div class="left-menu-button">
+							<form>
+								<button
+									class="menu-button-small clickable"
+									type="button"
+									onclick="toggleFullScreen();"
+								>
+									<h6>Fullscreen<br /><small>全画面表示</small></h6>
+								</button>
+							</form>
+						</div>
+
+						<div class="left-menu-button">
+							<form>
+								<button
+									class="menu-button-small clickable"
+									type="submit"
+									formaction="about.html"
+								>
+									<h6>About</h6>
+								</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="item footer footer-left-top"></div>
+				</div>
+
+				<div class="item gap-left"></div>
+
+				<div class="bookshelf">
+					<div class="logo-section">
+						<img
+							id="theme-image"
+							src="Logo/Black Logo.png"
+							alt="Impress Magazine Logo"
+						/>
+						<h1 style="text-align: center">
+							Find all the issues of Impress Magazine in this app!
+						</h1>
+					</div>
+					<div class="grid-section">
+
+						<div class="grid-item header">2024</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2024/index.html"
+								><img
+									src="Impress-Spring-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Summer-2024/index.html"
+								><img
+									src="Impress-Summer-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Fall-2024/index.html"
+								><img
+									src="Impress-Fall-2024/Web/page00.jpg"
+									style="
+
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Winter-2024/index.html"
+								><img
+									src="Impress-Winter-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2024/index.html"
+								><img
+									src="Impress-Spring-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+
+						<div class="grid-item header">2023</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2023/index.html"
+								><img
+									src="Impress-Spring-2023/Web/page01.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Summer-2023/index.html"
+								><img
+									src="Impress-Summer-2023/Web/page01.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Fall-2023/index.html"
+								><img
+									src="Impress-Fall-2023/Web/page01.jpg"
+									style="
+
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Winter-2024/index.html"
+								><img
+									src="Impress-Winter-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2024/index.html"
+								><img
+									src="Impress-Spring-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+
+						<div class="grid-item header">2022</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2024/index.html"
+								><img
+									src="Impress-Spring-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Summer-2024/index.html"
+								><img
+									src="Impress-Summer-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Fall-2024/index.html"
+								><img
+									src="Impress-Fall-2024/Web/page00.jpg"
+									style="
+
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Winter-2024/index.html"
+								><img
+									src="Impress-Winter-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2024/index.html"
+								><img
+									src="Impress-Spring-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+
+						<div class="grid-item header">2021</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2024/index.html"
+								><img
+									src="Impress-Spring-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Summer-2024/index.html"
+								><img
+									src="Impress-Summer-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Fall-2024/index.html"
+								><img
+									src="Impress-Fall-2024/Web/page00.jpg"
+									style="
+
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Winter-2024/index.html"
+								><img
+									src="Impress-Winter-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						<div class="grid-item" style="border-radius: 10%">
+							<a href="Impress-Spring-2024/index.html"
+								><img
+									src="Impress-Spring-2024/Web/page00.jpg"
+									style="
+										background-size: contain;
+										background-position: center;
+										background-repeat: no-repeat;
+										border-radius: 10%;
+									"
+							/></a>
+						</div>
+						
+
+
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		// Set dark mode as the default
+		document.body.classList.add("dark-mode");
+
+		// Check local storage for user's preference
+		const toggleButton = document.getElementById("dark-mode-toggle");
+		const themeImage = document.getElementById("theme-image");
+
+		// Check local storage for user's preference
+		const isDarkMode = localStorage.getItem("darkMode") === "true";
+		if (isDarkMode) {
+			document.body.classList.add("dark-mode");
+			themeImage.src = "/Logo/Black Logo.png"; // Set the dark mode image
+		} else {
+			document.body.classList.remove("dark-mode");
+			themeImage.src = "/Logo/White Logo.png"; // Set the dark mode image
+		}
+
+		// Function to toggle dark mode
+		const toggleDarkMode = () => {
+			const isCurrentlyDark = document.body.classList.toggle("dark-mode");
+
+			// Change the image based on the mode
+			if (isCurrentlyDark) {
+				themeImage.src = "/Logo/Black Logo.png"; // Set the dark mode image
+			} else {
+				themeImage.src = "/Logo/White Logo.png"; // Set the light mode image
+			}
+
+			// Save user preference to local storage
+			localStorage.setItem("darkMode", isCurrentlyDark);
+		};
+
+		// Event listener for the toggle button
+		toggleButton.addEventListener("click", toggleDarkMode);
+	</script>
+</html>

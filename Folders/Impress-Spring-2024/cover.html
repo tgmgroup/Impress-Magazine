@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<link href="style.css" rel="stylesheet" />
+		<meta
+			name="viewport"
+			content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Impress Magazine - Spring, 2024</title>
+		<link rel="icon" type="image/x-icon" href="nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="nav-images/logo.png" />
+		<script type="text/javascript" src="scripts.js"></script>
+	</head>
+	<body>
+		<div id="viewport">
+			<div id="container">
+				<!-- Your website content goes here -->
+
+				<div class="item sidebar sidebar-left">
+					<div class="item header header-left">
+						<form>
+							<button
+								class="menu-button clickable"
+								type="submit"
+								formaction="../index.html"
+							></button>
+						</form>
+					</div>
+
+					<div class="left-menu">
+						<div class="left-menu-button">
+							<a href="index.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/front.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="1.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/1.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="1.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/2.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="3.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/3.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="3.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/4.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="5.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/5.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="5.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/6.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="cover.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/back.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="about.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/about.png"
+							/></a>
+						</div>
+					</div>
+					<div class="item footer footer-left-top">
+						<form>
+							<button
+								class="menu-button-small clickable"
+								type="submit"
+								formaction="5.html"
+							>
+								<h6>< Previous</h6>
+							</button>
+						</form>
+					</div>
+					<div class="item footer footer-left-bottom">
+						<form>
+							<button
+								class="menu-button-small clickable"
+								type="submit"
+								formaction="about.html"
+							>
+								<h6>Next ></h6>
+							</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="item gap-left"></div>
+
+				<div
+					class="item content-center"
+					style="
+						background-image: url('Web/page07.jpg');
+						background-size: contain;
+						background-position: center;
+						background-attachment: local;
+						background-repeat: no-repeat;
+						background-color: #000000;
+					"
+				>
+					<div class="center-items">
+						<!-- Buttons -->
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="PlayAndShow('audio1-0', 'text1-0', 'play1-0')"
+							style="position: absolute; top: 5vw; left: 89vw"
+						>
+							<img
+								id="play1-0"
+								class="audio-button-image clickable"
+								src="nav-images/play-g79150a13d_1280.png"
+							/>
+							<h6>&nbsp;&nbsp;Closing</h6>
+						</button>
+
+						<form
+							action="https://in.isesaki.in/impress-spring-2024"
+							method="get"
+							target="_blank"
+						>
+							<button
+								class="center-items right-nav-buttons clickable"
+								type="submit"
+								style="position: absolute; top: 11vw; left: 89vw"
+							>
+								<img
+									id="play1-1e"
+									class="audio-button-image clickable"
+									src="nav-images/link.png"
+								/>
+								<h6>Impress Online</h6>
+							</button>
+						</form>
+
+						<!-- Closing Text -->
+
+						<div class="items hidden-text" id="text1-0">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<div class="modal-header">
+									<span
+										class="close clickable"
+										onClick="ResetPlayAndShow('audio1-0', 'text1-0', 'play1-0'), ResetPlayAndShow('audio1-0', 'text1-0', 'play1-0a')"
+										>&times;</span
+									>
+									<span
+										class="modal-play clickable"
+										onClick="PlaySound('audio1-0', 'play1-0a')"
+										><img
+											id="play1-0a"
+											class="audio-button-image clickable"
+											src="nav-images/play-g79150a13d_1280.png"
+									/></span>
+								</div>
+
+								<div class="modal-body">
+									<h3>Closing</h3>
+									<p
+										style="
+											font-size: 4vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 0.1vh;
+											line-height: 2;
+										"
+									>
+										That's it for this issue of <i>Impress</i>. Thanks as always
+										for your support and ideas. If you have any ideas for the
+										next issue of Impress, go to our website and send them in!
+										We're always glad to hear from you.
+									</p>
+									<p
+										style="
+											font-size: 4vh;
+											text-align: left;
+											text-indent: 0.9vw;
+											margin: 0.1vh;
+
+											line-height: 2;
+										"
+									>
+										<br />
+										P.S.: Visit our website to get even more content! And don't
+										forget to talk to your friends and teachers about
+										<i>Impress</i>!
+									</p>
+								</div>
+								<div class="modal-footer"></div>
+							</div>
+						</div>
+
+						<!-- Audio for Intro Text -->
+
+						<audio id="audio1-0" class="playondemand">
+							<source src="./audio/audio7-0.mp3" type="audio/mp3" />
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<link href="style.css" rel="stylesheet" />
+		<link href="slideshow.css" rel="stylesheet" />
+		<link href="style-canvas.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<meta
+			name="viewport"
+			content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Impress Magazine - Spring, 2024</title>
+		<link rel="icon" type="image/x-icon" href="nav-images/logo.png" />
+		<link id="favicon" rel="shortcut icon" href="nav-images/logo.png" />
+		<script type="text/javascript" src="scripts.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+	</head>
+
+	<body>
+		<div id="viewport">
+			<div id="container">
+				<!-- Your website content goes here -->
+
+				<div class="item sidebar sidebar-left">
+					<div class="item header header-left">
+						<form>
+							<button
+								class="menu-button clickable"
+								type="submit"
+								formaction="../index.html"
+							></button>
+						</form>
+					</div>
+
+					<div class="left-menu">
+						<div class="left-menu-button">
+							<a href="index.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/front.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="1.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/1.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="1.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/2.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="3.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/3.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="3.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/4.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="5.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/5.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="5.html" target="_self"
+								><img class="left-menu-image clickable" src="nav-images/6.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="cover.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/back.png"
+							/></a>
+						</div>
+						<div class="left-menu-button">
+							<a href="about.html" target="_self"
+								><img
+									class="left-menu-image clickable"
+									src="nav-images/about.png"
+							/></a>
+						</div>
+					</div>
+
+					<div class="item footer footer-left-top">
+						<form>
+							<button
+								class="menu-button-small clickable"
+								type="submit"
+								formaction="index.html"
+							>
+								<h6>< Previous</h6>
+							</button>
+						</form>
+					</div>
+					<div class="item footer footer-left-bottom">
+						<form>
+							<button
+								class="menu-button-small clickable"
+								type="submit"
+								formaction="3.html"
+							>
+								<h6>Next ></h6>
+							</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="item gap-left"></div>
+
+				<div
+					class="item content-center"
+					style="
+						background-image: url('Web/page012.jpg');
+						background-size: contain;
+						background-position: left;
+						background-attachment: local;
+						background-repeat: no-repeat;
+						background-color: #000000;
+					"
+				>
+					<div class="center-items">
+						<!-- Buttons -->
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="PlayAndShow('audio1-1', 'text1-1', 'play1-1')"
+							style="position: absolute; top: 5vw; left: 89vw"
+						>
+							<img
+								id="play1-1"
+								class="audio-button-image clickable"
+								src="nav-images/play-g79150a13d_1280.png"
+							/>
+							<h6>&nbsp;&nbsp;Rainy Day Songs</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="window.open('https://www.youtube.com/embed/LFrKYjrIDs8')"
+							value="Open in YouTube"
+							style="position: absolute; top: 11vw; left: 89vw"
+						>
+							<img
+								id="play1-1a"
+								class="audio-button-image clickable"
+								src="nav-images/link.png"
+							/>
+							<h6>&nbsp;&nbsp;Rain, Rain, Go Away</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="window.open('https://youtu.be/j7LWEQ9XraE')"
+							value="Open in YouTube"
+							style="position: absolute; top: 17vw; left: 89vw"
+						>
+							<img
+								id="play1-1b"
+								class="audio-button-image clickable"
+								src="nav-images/link.png"
+							/>
+							<h6>&nbsp;&nbsp;The Itsy, Bitsy Spider</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="window.open('https://www.youtube.com/embed/wceMsYSyNUQ')"
+							value="Open in YouTube"
+							style="position: absolute; top: 23vw; left: 89vw"
+						>
+							<img
+								id="play1-1c"
+								class="audio-button-image clickable"
+								src="nav-images/link.png"
+							/>
+							<h6>&nbsp;&nbsp;The Rainbow Song</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="window.open('https://www.youtube.com/watch?v=vC-8aAn8G_U')"
+							value="Open in YouTube"
+							style="position: absolute; top: 29vw; left: 89vw"
+						>
+							<img
+								id="play1-1d"
+								class="audio-button-image clickable"
+								src="nav-images/link.png"
+							/>
+							<h6>&nbsp;&nbsp;It's Raining, It's Pouring</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="PlayAndShow('audio1-2', 'text1-2', 'play1-2')"
+							style="position: absolute; top: 37vw; left: 89vw"
+						>
+							<img
+								id="play1-2"
+								class="audio-button-image clickable"
+								src="nav-images/play-g79150a13d_1280.png"
+							/>
+							<h6>&nbsp;&nbsp;Earth Day</h6>
+						</button>
+
+						<button
+							class="center-items right-nav-buttons clickable"
+							type="button"
+							onClick="PlayAndShow('audio1-3', 'text1-3', 'play1-3')"
+							style="position: absolute; top: 43vw; left: 89vw"
+						>
+							<img
+								id="play1-3"
+								class="audio-button-image clickable"
+								src="nav-images/play-g79150a13d_1280.png"
+							/>
+							<h6>&nbsp;&nbsp;Word Search</h6>
+						</button>
+
+						<!-- Text for Main Text -->
+
+						<div class="items hidden-text" id="text1-1">
+							<!-- Modal content -->
+							<div
+								class="modal-canvas"
+								style="background-image: url('Web/Rain-Earth/page02a0.jpg')"
+							>
+								<div class="modal-body">
+									<h3
+										style="
+											font-size: 3vh;
+											color: black;
+											text-shadow: 1px 1px 2px white, 0 0 25px whitesmoke,
+												0 0 5px #fffff9;
+										"
+									>
+										Rainy Day Songs
+									</h3>
+
+									<div
+										id="arrangingContainer"
+										class="slideshow-container"
+										style="
+											background-image: url('Web/Rain-Earth/page02a1.jpg');
+											background-size: cover;
+										"
+									>
+										<canvas
+											id="arrangingCanvas"
+											width="1920"
+											height="1080"
+										></canvas>
+									</div>
+								</div>
+
+								<!-- Add your buttons here -->
+								<span
+									class="close clickable"
+									onClick="ResetPlayAndShow('audio1-1', 'text1-1', 'play1-1')"
+									>&times;</span
+								>
+							</div>
+						</div>
+
+						<div class="items hidden-text" id="text1-2">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<div class="modal-header">
+									<span
+										class="close clickable"
+										onClick="ResetPlayAndShow('audio1-2', 'text1-2', 'play1-2')"
+										>&times;</span
+									>
+									<span
+										class="modal-play clickable"
+										onClick="PlaySound('audio1-2', 'play1-2a')"
+										><img
+											id="play1-2a"
+											class="audio-button-image clickable"
+											src="nav-images/play-g79150a13d_1280.png"
+									/></span>
+								</div>
+
+								<div class="modal-body">
+									<h3>About Earth Day</h3>
+									<p
+										style="
+											font-size: 3.6vh;
+											text-align: left;
+											text-indent: 0.9vw;
+										"
+									>
+										Hey there, young heroes! April 22nd was Earth Day. It’s a
+										super special day. People all over the Earth came together
+										to show how much we love our Earth.
+									</p>
+									<p
+										style="
+											font-size: 3.6vh;
+											text-align: left;
+											text-indent: 0.9vw;
+										"
+									>
+										Our Earth gives us so many things. We get clean air, fresh
+										water, and beautiful forests. And just like we take care of
+										our toys and pets, we need to take care of our planet, too!
+										It's important to say "thank you" to Earth and to protect
+										it.
+									</p>
+									<p
+										style="
+											font-size: 3.6vh;
+											text-align: left;
+											text-indent: 0.9vw;
+										"
+									>
+										There are so many fun things to do on Earth Day! You can
+										plant a tree, clean up trash, and save water. You can learn
+										about recycling, forests, and animals.
+									</p>
+									<p
+										style="
+											font-size: 3.6vh;
+											text-align: left;
+											text-indent: 0.9vw;
+										"
+									>
+										Are you ready to be heroes? Earth is our home, so let’s be
+										heroes every day and protect our Earth. Happy Earth Day!
+										<br />
+									</p>
+								</div>
+								<div class="modal-footer"></div>
+							</div>
+						</div>
+
+						<div class="items hidden-text" id="text1-3">
+							<!-- Modal content -->
+							<div class="modal-canvas">
+								<div class="modal-body">
+									<!-- Add the word search and canvas here -->
+
+									<div
+										id="drawingContainer"
+										class="slideshow-container"
+										style="background-image: url('Web/Rain-Earth/page02b1.jpg')"
+									>
+										<canvas
+											id="drawingCanvas"
+											width="800"
+											height="600"
+										></canvas>
+									</div>
+
+									<!-- Add your buttons here -->
+									<span
+										class="close clickable"
+										onClick="ResetPlayAndShow('audio1-3', 'text1-3', 'play1-3')"
+										>&times;</span
+									>
+
+									<!-- Button to undo last drawn item -->
+									<span
+										id="undoButton"
+										class="canvas-buttons clickable"
+										style="position: absolute; top: 6vw; left: 89vw"
+										onClick="undoLastItem()"
+										><i class="fa fa-rotate-left"></i> &emsp; Undo</span
+									>
+
+									<!-- Button to redo last undone item -->
+									<span
+										id="redoButton"
+										class="canvas-buttons clickable"
+										style="position: absolute; top: 12vw; left: 89vw"
+										onClick="redoLastItem()"
+										><i class="fa fa-rotate-right"></i> &emsp; Redo</span
+									>
+
+									<!-- Clear Canvas button -->
+									<span
+										id="clearCanvas"
+										class="canvas-buttons clickable"
+										style="position: absolute; top: 18vw; left: 89vw"
+										onClick="canvas.clear()"
+										><i class="fa fa-eraser"></i> &emsp; Reset</span
+									>
+
+									<!-- Button to change background -->
+									<span
+										class="canvas-buttons clickable"
+										style="position: absolute; top: 38vw; left: 89vw"
+										onClick="showAnswer()"
+										><i class="fa fa-eye"></i> &thinsp; Show Answer</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										style="position: absolute; top: 45vw; left: 89vw"
+										onClick="hideAnswer()"
+										><i class="fa fa-eye-slash"></i> &thinsp; Hide Answer</span
+									>
+
+									<!-- Vocabulary Buttons -->
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3a', 'play1-3a')"
+										style="position: absolute; top: 1vw; left: 2vw"
+										onClick="undoLastItem()"
+										>Earth</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3b', 'play1-3b')"
+										style="position: absolute; top: 6.5vw; left: 2vw"
+										onClick="redoLastItem()"
+										>hero</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3c', 'play1-3c')"
+										style="position: absolute; top: 12vw; left: 2vw"
+										onClick="canvas.clear()"
+										>clean air</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3d', 'play1-3d')"
+										style="position: absolute; top: 17.5vw; left: 2vw"
+										onClick="showAnswer()"
+										>fresh water</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3e', 'play1-3e')"
+										style="position: absolute; top: 23vw; left: 2vw"
+										onClick="hideAnswer()"
+										>forest</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3f', 'play1-3f')"
+										style="position: absolute; top: 28.5vw; left: 2vw"
+										onClick="canvas.clear()"
+										>take care of</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3g', 'play1-3g')"
+										style="position: absolute; top: 34vw; left: 2vw"
+										onClick="showAnswer()"
+										>protect</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3h', 'play1-3h')"
+										style="position: absolute; top: 39.5vw; left: 2vw"
+										onClick="hideAnswer()"
+										>trash</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3i', 'play1-3i')"
+										style="position: absolute; top: 45vw; left: 2vw"
+										onClick="canvas.clear()"
+										>save water</span
+									>
+
+									<span
+										class="canvas-buttons clickable"
+										onClick="PlaySound('audio1-3j', 'play1-3j')"
+										style="position: absolute; top: 50.5vw; left: 2vw"
+										onClick="showAnswer()"
+										>recycling</span
+									>
+
+									<!-- Add other buttons as needed -->
+								</div>
+
+								<br />
+							</div>
+						</div>
+					</div>
+
+					<!-- Audio for Intro Text and Buttons -->
+
+					<audio id="audio1-1" class="playondemand">
+						<source src="./audio/audio1-1.mp3" type="audio/mp3" />
+					</audio>
+
+					<audio id="audio1-2" class="playondemand">
+						<source src="./audio/audio1-2.mp3" type="audio/mp3" />
+					</audio>
+
+					<audio id="audio1-3" class="playondemand">
+						<source src="./audio/audio1-3.mp3" type="audio/mp3" />
+					</audio>
+
+					<audio id="audio1-3a" class="playondemand">
+						<source src="./audio/audio1-3a.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3b" class="playondemand">
+						<source src="./audio/audio1-3b.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3c" class="playondemand">
+						<source src="./audio/audio1-3c.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3d" class="playondemand">
+						<source src="./audio/audio1-3d.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3e" class="playondemand">
+						<source src="./audio/audio1-3e.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3f" class="playondemand">
+						<source src="./audio/audio1-3f.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3g" class="playondemand">
+						<source src="./audio/audio1-3g.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3h" class="playondemand">
+						<source src="./audio/audio1-3h.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3i" class="playondemand">
+						<source src="./audio/audio1-3i.mp3" type="audio/mp3" />
+					</audio>
+					<audio id="audio1-3j" class="playondemand">
+						<source src="./audio/audio1-3j.mp3" type="audio/mp3" />
+					</audio>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Function to update canvas dimensions
+			function updateDrawingCanvasSize() {
+				var canvas = document.getElementById("drawingCanvas");
+				canvas.width = window.innerWidth * 0.9;
+				canvas.height = window.innerHeight * 0.8;
+			}
+
+			// Initialize canvas dimensions
+			updateDrawingCanvasSize();
+
+			// Update canvas dimensions when the window is resized
+			window.addEventListener("resize", function () {
+				updateDrawingCanvasSize();
+			});
+
+			// Initialize Fabric.js canvas
+			var canvas = new fabric.Canvas("drawingCanvas", {
+				isDrawingMode: true,
+				optimizedRendering: true,
+			});
+
+			// Customize drawing options
+			canvas.freeDrawingBrush.color = "red"; // Set stroke color
+			canvas.freeDrawingBrush.width = 20; // Set stroke width
+
+			// Clear canvas button functionality
+			document
+				.getElementById("clearCanvas")
+				.addEventListener("click", function () {
+					canvas.clear();
+				});
+
+			var canvasState = []; // Array to store canvas state for undo/redo
+			var canvasIndex = -1; // Index to keep track of current canvas state
+
+			// Function to save canvas state
+			function saveCanvasState() {
+				var json = JSON.stringify(canvas.toDatalessJSON());
+				canvasState.push(json);
+				canvasIndex++;
+			}
+
+			// Function to undo last drawn item on the canvas
+			function undoLastItem() {
+				if (canvasIndex > 0) {
+					canvasIndex--;
+					canvas.loadFromJSON(
+						canvasState[canvasIndex],
+						canvas.renderAll.bind(canvas)
+					);
+				}
+			}
+
+			// Function to redo last undone item on the canvas
+			function redoLastItem() {
+				if (canvasIndex < canvasState.length - 1) {
+					canvasIndex++;
+					canvas.loadFromJSON(
+						canvasState[canvasIndex],
+						canvas.renderAll.bind(canvas)
+					);
+				}
+			}
+
+			// Add event listeners to the buttons
+			document
+				.getElementById("undoButton")
+				.addEventListener("click", function () {
+					undoLastItem();
+				});
+
+			document
+				.getElementById("redoButton")
+				.addEventListener("click", function () {
+					redoLastItem();
+				});
+
+			// Add event listener to the canvas to save state before drawing
+			canvas.on("mouse:down", function () {
+				saveCanvasState();
+			});
+
+			// Function to change background image of drawingContainer
+			function showAnswer() {
+				var drawingContainer = document.getElementById("drawingContainer");
+				drawingContainer.style.backgroundImage =
+					"url('Web/Rain-Earth/page02b2.jpg')";
+				// Adjust the URL of the background image as needed
+			}
+
+			// Add event listener to the button to change background
+			document
+				.getElementById("showAnswerButton")
+				.addEventListener("click", function () {
+					showAnswer();
+				});
+
+			function hideAnswer() {
+				var drawingContainer = document.getElementById("drawingContainer");
+				drawingContainer.style.backgroundImage =
+					"url('Web/Rain-Earth/page02b1.jpg')";
+				// Adjust the URL of the background image as needed
+			}
+
+			// Add event listener to the button to change background
+			document
+				.getElementById("hideAnswerButton")
+				.addEventListener("click", function () {
+					hideAnswer();
+				});
+		</script>
+
+		<script>
+			// Function to update canvas dimensions
+			function updateArrangingCanvasSize() {
+				var canvas = document.getElementById("arrangingCanvas");
+				canvas.width = window.innerWidth * 0.7;
+				canvas.height = window.innerHeight * 0.8;
+			}
+
+			// Initialize canvas dimensions
+			updateArrangingCanvasSize();
+
+			// Update canvas dimensions when the window is resized
+			window.addEventListener("resize", function () {
+				updateArrangingCanvasSize();
+			});
+
+			// Initialize Fabric.js canvas
+			var arrangingCanvas = new fabric.Canvas("arrangingCanvas", {
+				optimizedRendering: true,
+			});
+
+			// Function to add pre-added movable image elements*/
+
+			// Array of image URLs
+			var imageUrls = [
+				"Web/Rain-Earth/page02a2a.png",
+				"Web/Rain-Earth/page02a2b.png",
+				"Web/Rain-Earth/page02a2c.png",
+				"Web/Rain-Earth/page02a2d.png",
+			];
+
+			// Function to add multiple images to the arrangingCanvas
+			function addImagesToCanvas() {
+				imageUrls.forEach(function (url, index) {
+					fabric.Image.fromURL(url, function (img) {
+						img.set({
+							left:
+								window.innerWidth * 0.02 +
+								window.innerWidth * 0.14 * index * 1.2, // Adjust the horizontal position of each image
+							top:
+								window.innerHeight * 0.3 +
+								window.innerHeight * 0.1 * index * 0.5, // Adjust the vertical position of each image
+							scaleX: (canvas.width / window.innerWidth) * 0.35, // Optionally, set initial scale
+							scaleY: (canvas.height / window.innerHeight) * 0.4,
+							selectable: true, // Allow image to be selected/moved
+						});
+						arrangingCanvas.add(img); // Add image to the canvas
+					});
+				});
+			}
+
+			// Call the function to add multiple images to the canvas
+			addImagesToCanvas();
+		</script>
+	</body>
+</html>
