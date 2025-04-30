@@ -1,36 +1,67 @@
 /* style.css */
 /* Combined styles for layout, theme, slides, toggles, and effects */
 
-/* --- Basic Reset --- */
-* {
-	margin: 0;
-	padding: 0;
+/* ==========================================================================
+   1. FONT SETUP
+   ========================================================================== */
+
+@font-face {
+	font-family: "Klee One";
+	src: url("font/kleeone_regular.ttf") format("truetype");
+	font-display: swap; /* Improves perceived performance */
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	src: url("font/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap; /* Improves perceived performance */
+}
+
+/* ==========================================================================
+   3. GLOBAL RESETS & BASE STYLES
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
+	margin: 0; /* Reset margins */
+	padding: 0; /* Reset paddings */
 }
 
 /* --- Theme Variables --- */
 :root {
 	/* Light Mode Colors */
 	--bg-color: #f8f8f8;
+	--bg-color-divs: #b8b8b8;
+	--bg-color-bookshelf: #b8b8b882;
+	--bg-color-header: #e0e9fbbe;
+	--bg-color-text-divs: #f8f8f8d8;
+	--box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.015),
+		0 6px 20px 0 rgba(0, 0, 0, 0.015);
 	--text-color: #333333; /* Dark text for light mode */
 	--nav-bg: #e0e0e0;
+	--nav-bg-image: linear-gradient(203deg, #b8b8e5c7 0%, #7c7fddcf 90%);
 	--nav-icon-color: #555555;
-	--link-hover-bg: #cccccc;
+	--link-text: #171418;
+	--link-hover-bg: #ffffffc2;
 	--cta-bg: var(--nav-icon-color);
 	--cta-text: var(--nav-bg); /* Light text for dark button in light mode */
 	--slide-button-bg: rgba(0, 0, 0, 0.3);
 	--slide-button-hover-bg: rgba(0, 0, 0, 0.6);
 	--slide-button-text: white;
 
-    /* --- Hero Gradient Colors (Light Mode - Slightly Brighter/Different Palette) --- */
-    --hero-grad-1: hsl(280, 48%, 74%); /* Muted Violet */
-    --hero-grad-2: hsl(240, 47%, 79%); /* Muted Blue */
-    --hero-grad-3: hsl(180, 40%, 78%); /* Muted Cyan */
-    --hero-grad-4: hsl(120, 47%, 79%); /* Muted Green */
-    --hero-grad-5: hsl(60, 46%, 84%);  /* Muted Yellow */
-    --hero-grad-6: hsl(20, 53%, 84%);  /* Muted Orange */
+	/* --- Hero Gradient Colors (Light Mode - Slightly Brighter/Different Palette) --- */
+	--hero-grad-1: hsl(280, 48%, 74%); /* Muted Violet */
+	--hero-grad-2: hsl(240, 47%, 79%); /* Muted Blue */
+	--hero-grad-3: hsl(180, 40%, 78%); /* Muted Cyan */
+	--hero-grad-4: hsl(120, 47%, 79%); /* Muted Green */
+	--hero-grad-5: hsl(60, 46%, 84%); /* Muted Yellow */
+	--hero-grad-6: hsl(20, 53%, 84%); /* Muted Orange */
 
-	--hero-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for light mode */
+	--hero-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.003); /* Shadow for light mode */
 	--hero-cta-bg: hsla(
 		0,
 		0%,
@@ -44,25 +75,33 @@
 html.dark {
 	/* Dark Mode Colors */
 	--bg-color: #1a1a1a;
+	--bg-color-divs: #080707;
+	--bg-color-bookshelf: #08070796;
+	--bg-color-header: #051129be;
+	--bg-color-text-divs: #080707c8;
+	--box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.015),
+		0 6px 20px 0 rgba(255, 255, 255, 0.015);
 	--text-color: #e0e0e0; /* Light text for dark mode */
 	--nav-bg: #2c2c2c;
+	--nav-bg-image: linear-gradient(203deg, #05062dc4 0%, #01000dcc 90%);
 	--nav-icon-color: #b0b0b0;
-	--link-hover-bg: #444444;
+	--link-text: #f6dbff;
+	--link-hover-bg: #000000ac;
 	--cta-bg: var(--nav-icon-color);
 	--cta-text: var(--nav-bg); /* Dark text for light button in dark mode */
 	--slide-button-bg: rgba(255, 255, 255, 0.2);
 	--slide-button-hover-bg: rgba(255, 255, 255, 0.4);
 	--slide-button-text: white;
 
-    /* --- Hero Gradient Colors (Dark Mode - Original Dark Rainbow) --- */
-    --hero-grad-1: hsl(0, 64%, 6%);   /* Dark Red */
-    --hero-grad-2: hsl(41, 66%, 9%);  /* Dark Orange */
-    --hero-grad-3: hsl(80, 67%, 7%);  /* Dark Yellow-Green */
-    --hero-grad-4: hsl(160, 68%, 6%); /* Dark Teal */
-    --hero-grad-5: hsl(220, 66%, 8%); /* Dark Blue */
-    --hero-grad-6: hsl(280, 68%, 6%); /* Dark Violet */
+	/* --- Hero Gradient Colors (Dark Mode - Original Dark Rainbow) --- */
+	--hero-grad-1: hsl(0, 64%, 6%); /* Dark Red */
+	--hero-grad-2: hsl(41, 66%, 9%); /* Dark Orange */
+	--hero-grad-3: hsl(80, 67%, 7%); /* Dark Yellow-Green */
+	--hero-grad-4: hsl(160, 68%, 6%); /* Dark Teal */
+	--hero-grad-5: hsl(220, 66%, 8%); /* Dark Blue */
+	--hero-grad-6: hsl(280, 68%, 6%); /* Dark Violet */
 
-	--hero-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); /* Shadow for dark mode */
+	--hero-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); /* Shadow for dark mode */
 	--hero-cta-bg: hsla(
 		0,
 		0%,
@@ -75,24 +114,28 @@ html.dark {
 /* --- End Theme Variables --- */
 
 /* --- Base Styles --- */
-html,
+html {
+	height: 100%;
+}
+
 body {
 	height: 100%;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-	background-color: var(--bg-color);
+	font-family: "Klee One";
+	background-color: var(--bg-color-divs);
 	color: var(--text-color); /* Default text color applies */
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+	padding-left: 60px; /* Account for fixed desktop nav */
 }
 
 /* --- Navigation Bar (Desktop - Default) --- */
 #icon-nav {
 	position: fixed;
 	top: 0;
-	right: 0;
+	left: 0;
 	bottom: 0;
 	width: 60px;
 	background-color: var(--nav-bg);
+	background-image: var(--nav-bg-image);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -103,10 +146,12 @@ body {
 	transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease,
 		top 0.3s ease, right 0.3s ease, left 0.3s ease, bottom 0.3s ease,
 		flex-direction 0s;
+	box-shadow: 0vw 0.01vw 0.5vw rgba(0, 0, 0, 0.2);
 }
 /* Nav Links and Base Button Styles (Shared) */
 #icon-nav a,
-#icon-nav button {
+#icon-nav button,
+#icon-nav img {
 	color: var(--nav-icon-color);
 	font-size: 24px;
 	text-decoration: none;
@@ -122,51 +167,80 @@ body {
 	width: 40px;
 	height: 40px;
 	flex-shrink: 0;
+	box-shadow: var(--box-shadow);
 }
 #icon-nav a:hover,
 #icon-nav button:hover {
 	background-color: var(--link-hover-bg);
+	box-shadow: var(--box-shadow);
 }
 /* Theme Toggle Button Specifics (Desktop) */
 #theme-toggle {
 	margin-top: auto;
+	box-shadow: var(--box-shadow);
 }
 /* Snow Toggle Button Specifics (Desktop) */
 #snow-toggle {
 	margin-top: 0;
+	box-shadow: var(--box-shadow);
 }
 
-/* --- Hero Section (Desktop - Default) --- */
-#hero {
+/* --- Main Layout Container --- */
+#container {
 	min-height: 100vh;
+	height: 100%; /* Let flex children determine height */
+	width: 100%; /* Full width relative to body padding */
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	transition: padding-top 0.3s ease, padding-right 0.3s ease;
-	padding-right: 75px;
-	padding-left: 15px;
-	padding-top: 0;
+	flex-direction: row; /* Default: side-by-side */
 	position: relative;
-	overflow: hidden;
-	/* --- Animated Dark Rainbow Background --- */
-    /* Use CSS variables for gradient colors */
-    background: linear-gradient(135deg,
-        var(--hero-grad-1),
-        var(--hero-grad-2),
-        var(--hero-grad-3),
-        var(--hero-grad-4),
-        var(--hero-grad-5),
-        var(--hero-grad-6),
-        var(--hero-grad-1) /* Repeat first color for loop */
-    );
+	/* Removed align/justify center as flex children handle their own */
+	/* text-align: center; */ /* Apply text-align to children if needed */
+	transition: padding-top 0.3s ease, padding-right 0.3s ease, top 0.3s ease,
+		flex-direction 0s;
+	padding: 0; /* Reset container padding */
+	overflow: hidden; /* Keep if desired */
+
+	/* --- Animated Background --- */
+	background: linear-gradient(
+		135deg,
+		var(--hero-grad-1),
+		var(--hero-grad-2),
+		var(--hero-grad-3),
+		var(--hero-grad-4),
+		var(--hero-grad-5),
+		var(--hero-grad-6),
+		var(--hero-grad-1) /* Repeat first color for loop */
+	);
 	background-size: 500% 500%;
 	animation: waveAnimation 10s ease infinite;
 	/* --- End Animated Background --- */
 }
 
+/* --- Hero Section (Desktop - Default) --- */
+#hero {
+	min-height: 100vh;
+	height: 100%; /* Takes full height of flex container */
+	width: 50%; /* Takes half width */
+	max-width: 50vw; /* Max width relative to viewport */
+	display: flex; /* Use flex for internal alignment */
+	flex-direction: column; /* Stack internal content */
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	transition: padding-top 0.3s ease, padding-right 0.3s ease, width 0.3s ease,
+		height 0.3s ease;
+	padding: 0px; /* Reset padding */
+	position: relative; /* For absolute positioning of children like buttons */
+	overflow: hidden; /* Hide content overflow */
+	box-shadow: var(--box-shadow);
+}
+
 /* Ensure hero text uses theme text color but adds shadow for readability */
+#hero h1,
 #hero h2,
+#hero h3,
+#hero h4,
+#hero h5,
 #hero p {
 	color: var(--text-color); /* USE THEME VARIABLE */
 	text-shadow: var(--hero-text-shadow); /* Use theme-dependent shadow */
@@ -187,27 +261,38 @@ body {
 	background-color: var(--hero-cta-hover-bg);
 }
 
+#theme-image {
+	width: 50%; /* Make image fill the section */
+	height: auto; /* Maintain aspect ratio */
+	transition: background-color 0.3s ease, color 0.3s ease;
+	border-radius: 5%;
+	box-shadow: var(--box-shadow);
+}
 
 /* --- Slides --- */
 .slides-container {
 	width: 100%;
-	height: auto;
+	/* height: auto; */ /* Let content define height */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 200px;
-	position: relative;
+	position: relative; /* Changed from absolute */
 	z-index: 1; /* Behind text/buttons */
+	flex-grow: 1; /* Allow container to fill space if #hero is flex */
+	height: 100%; /* Ensure text is centered vertically */
 }
 .slide {
 	display: none;
 	flex-direction: column;
+	justify-content: center; /* Center content vertically in the slide */
 	align-items: center;
 	text-align: center;
 	padding: 20px;
 	width: 100%;
 	max-width: 600px;
 	animation: fadeIn 0.6s ease-in-out;
+	height: 100%; /* Take full height of slides-container */
 }
 
 .slide.active {
@@ -224,6 +309,7 @@ body {
 	border-radius: 5px;
 	font-weight: bold;
 	transition: background-color 0.3s ease, color 0.3s ease, opacity 0.2s ease;
+	margin-top: 1rem; /* Add some space above button */
 }
 
 .cta-button:hover {
@@ -238,15 +324,12 @@ body {
 }
 
 .slide p {
-	font-size: 1.1rem;
+	font-size: 1.6rem;
 	line-height: 1.6;
 	margin-bottom: 1.5rem;
 	color: var(--text-color);
 	transition: color 0.3s ease;
 }
-
-
-/* Slide Content styles are handled by the #hero selectors above */
 
 /* --- Slide Navigation Buttons (Prev/Next - Desktop Default) --- */
 #prev-slide,
@@ -271,11 +354,116 @@ body {
 	background-color: var(--slide-button-hover-bg);
 }
 #prev-slide {
+	/* Adjust considering hero is 50% width and nav is 60px */
+	/* Position relative to the hero container */
 	left: 15px;
 }
 #next-slide {
-	right: calc(60px + 15px);
+	/* Position relative to the hero container */
+	right: 15px;
 }
+
+/* --- Bookshelf Section --- */
+.bookshelf {
+	min-height: 100vh;
+	height: 100%; /* Takes full height of flex container */
+	width: 50%; /* Takes half width */
+	max-width: 50vw; /* Max width relative to viewport */
+	display: flex; /* Use flex for internal two-column layout */
+	overflow: hidden; /* Prevent overflow from container */
+	transition: width 0.3s ease, height 0.3s ease;
+	background-color: var(
+		--bg-color-bookshelf
+	); /* Optional: Give it a distinct bg */
+	box-shadow: var(--box-shadow);
+}
+
+.logo-section {
+	flex: 1; /* Takes up half the width */
+
+	color: var(--text-color); /* Default text color applies */
+	overflow: hidden; /* Prevent overflow from image section */
+}
+.logo-section img {
+	width: 100%; /* Make image fill the section */
+	height: auto; /* Maintain aspect ratio */
+}
+
+.grid-section {
+	flex: 1; /* Takes up half the width */
+	display: grid;
+	grid-template-columns: repeat(6, 1fr); /* 2 columns of equal width */
+	gap: 1vh; /* Space between grid items */
+	padding: 1vh; /* Padding inside the grid section */
+
+	color: var(--text-color); /* Default text color applies */
+	min-height: 100vh; /* Full height for grid section */
+	max-height: 100vh;
+	height: 100%;
+	overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.grid-item {
+	padding: 0vh; /* Padding inside grid items */
+
+	color: var(--text-color); /* Default text color applies */
+	border: 0px solid #ccc; /* Optional border for visibility */
+	height: 17vh;
+	text-align: left; /* Left align text */
+	font-size: 3vh;
+	text-align: center;
+	overflow: hidden; /* Prevent overflow from image section */
+	border-radius: 0.5vh;
+}
+
+.grid-section {
+	flex: 1; /* Takes up half the width of bookshelf */
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(calc(17vh * 0.71), 0fr)
+	); /* Responsive columns */
+	gap: 1vh; /* Space between grid items */
+	align-items: center;
+	padding: 1vh; /* Padding inside the grid section */
+	margin: 0;
+	color: var(--text-color);
+	min-height: 100vh; /* Full height for grid section */
+	height: 100%;
+	overflow-y: auto; /* Enable vertical scrolling */
+
+	justify-content: center;
+}
+
+.grid-item {
+	/*padding: 0.5vh;  Padding inside grid items */
+	color: var(--text-color);
+	border: 0px solid #ccc;
+	min-height: 15vh; /* Minimum height */
+	height: 17vh; /* Allow items to grow */
+	width: calc(17vh * 0.71);
+	text-align: center;
+	font-size: 1rem; /* Use rem/em instead of vh for font-size */
+	overflow: hidden;
+	border-radius: 0.5vh;
+	display: flex; /* To center content */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.1); /* Slight background */
+	box-shadow: var(--box-shadow);
+}
+
+.grid-item img {
+	width: 100%; /* Make image fill the section */
+	height: 100%; 
+	align-items: center;
+	object-fit: contain;
+}
+
+/* ==========================================================================
+   REST OF YOUR CSS (Typography, Components, Utilities, etc.)
+   ========================================================================== */
 
 /* --- Snowfall Canvas --- */
 #snowfall {
@@ -287,51 +475,6 @@ body {
 	pointer-events: none;
 	z-index: 1000;
 	/* display initial state set by JS */
-}
-
-/* --- Mobile Styles (screens <= 768px) --- */
-@media (max-width: 768px) {
-	#icon-nav {
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: auto;
-		width: 100%;
-		height: 55px;
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
-		padding-top: 0;
-		padding-bottom: 0;
-		padding-left: 10px;
-		padding-right: 10px;
-		gap: 5px;
-	}
-	#theme-toggle,
-	#snow-toggle {
-		margin-top: 0;
-	}
-	#hero {
-		padding-right: 15px;
-		padding-left: 15px;
-		padding-top: 70px; /* Nav height + gap */
-	}
-	#prev-slide {
-		left: 10px;
-		padding: 8px 12px;
-		font-size: 20px;
-	}
-	#next-slide {
-		right: 10px;
-		padding: 8px 12px;
-		font-size: 20px;
-	}
-	#hero h2 {
-		font-size: 1.8rem;
-	}
-	#hero p {
-		font-size: 1rem;
-	}
 }
 
 /* --- Animations --- */
@@ -355,3 +498,276 @@ body {
 		background-position: 0% 50%;
 	}
 }
+
+/* --- Typography --- */
+/* Consider using rem/em or clamp() for better accessibility */
+p {
+	font-size: clamp(1.2rem, 2vw, 1.6rem); /* Example using clamp */
+	line-height: 1.6;
+}
+
+.small-text {
+	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+	text-align: left;
+}
+
+h1 {
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	font-weight: bold;
+}
+h2 {
+	font-size: clamp(1.6rem, 2.7vw, 2.2rem);
+	font-weight: bold;
+}
+h3 {
+	font-size: clamp(1.4rem, 2.5vw, 2rem);
+	font-weight: bold;
+}
+h4 {
+	font-size: clamp(1.2rem, 2vw, 1.8rem);
+	font-weight: bold;
+}
+h5 {
+	font-size: clamp(1rem, 1.5vw, 1.5rem);
+	font-weight: bold;
+}
+h6 {
+	font-size: clamp(0.8rem, 1vw, 1.2rem);
+	font-weight: bold;
+}
+small {
+	font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+}
+
+.credit-text {
+	font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+	text-indent: 1em; /* Use em for relative indent */
+	line-height: 1.8;
+	text-align: justify;
+	color: var(--text-color);
+}
+
+.credit-text-small {
+	font-size: clamp(0.8rem, 1vw, 1rem);
+	font-family: "Noto Sans JP";
+	margin-left: 0.5em;
+	line-height: 1.4;
+	text-indent: -0.5em; /* Creates a hanging indent */
+}
+
+.credit-link {
+	cursor: pointer;
+	box-shadow: var(--box-shadow);
+	padding: 0.1em 0.3em; /* Add slight padding for hover bg */
+	border-radius: 3px;
+	transition: background-color 0.2s ease;
+}
+
+.credit-link:hover {
+	background-color: var(--link-hover-bg);
+}
+
+/* --- Component Styles --- */
+
+.item {
+	background-color: var(--bg-color);
+	box-shadow: none;
+	color: var(--text-color);
+	border-radius: 0vw;
+	border: 0vw solid #171717;
+	display: inline-grid; /* Changed from flex */
+	justify-content: center;
+	align-items: center;
+	font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+	font-weight: bold;
+}
+
+.header,
+.footer {
+	background-color: var(--bg-color-header);
+	font-size: 1.6rem;
+	color: var(--text-color); /* Default text color applies */
+	/* --- Animated Background --- */
+	background: linear-gradient(
+		135deg,
+		var(--hero-grad-1),
+		var(--hero-grad-2),
+		var(--hero-grad-3),
+		var(--hero-grad-4),
+		var(--hero-grad-5),
+		var(--hero-grad-6),
+		var(--hero-grad-1) /* Repeat first color for loop */
+	);
+	background-size: 500% 500%;
+	animation: waveAnimation 10s ease infinite;
+	/* --- End Animated Background --- */
+	box-shadow: 0vw 0.01vw 0.05vw rgba(0, 0, 0, 0.5);
+	border: 0vw;
+	text-align: center;
+	border-radius: 01.5vh;
+	margin: 0.1vw;
+	padding: 0.5em; /* Add padding */
+	display: flex; /* Use flex for alignment */
+	align-items: center;
+	justify-content: center;
+}
+
+/* (other button styles: .menu-button, .image-button-base, etc.) */
+
+a {
+	color: var(--link-text);
+	cursor: pointer;
+	text-decoration: none; /* Optional: remove default underline */
+}
+a:hover {
+	text-decoration: underline; /* Optional: add underline on hover */
+}
+
+a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	text-decoration: none;
+	color: initial;
+	cursor: pointer;
+	/* Add padding, background etc. to style like a button */
+	padding: 0.5em 1em;
+	border: 1px solid var(--text-color);
+	border-radius: 4px;
+}
+
+/* --- Media Queries --- */
+
+/* Landscape Orientation (Optional refinements) */
+@media screen and (orientation: landscape) {
+	/* Styles specific to landscape if needed */
+}
+
+/* --- Mobile Styles (screens <= 768px) --- */
+@media screen and (max-width: 768px) {
+	body {
+		padding-left: 0; /* Remove side padding */
+		padding-top: 55px; /* Add padding for top nav */
+	}
+
+	#icon-nav {
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: auto;
+		width: 100%;
+		height: 55px; /* Mobile nav height */
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0 10px;
+		gap: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+	}
+	#theme-toggle,
+	#snow-toggle {
+		margin-top: 0; /* Reset margin */
+	}
+
+	/* Adjust Container for Mobile */
+	#container {
+		flex-direction: column; /* Stack children vertically */
+		width: 100%; /* Full width */
+		margin-left: 0; /* Remove desktop nav margin */
+		min-height: calc(100vh - 55px); /* Account for mobile nav */
+		height: auto; /* Allow height to grow with content */
+		top: 0; /* Position relative to body padding */
+		position: relative; /* Change from fixed/absolute if it was */
+		/* Align items to the start (top) in column mode */
+		justify-content: flex-start;
+		align-items: center; /* Center items horizontally */
+	}
+
+	/* Adjust Hero for Mobile */
+	#hero {
+		width: 100%; /* Full width */
+		max-width: 100%; /* Override desktop max-width */
+		height: auto; /* Let content determine height */
+		min-height: 50vh; /* Example: minimum height */
+		order: 1; /* Stack order */
+		/* Adjust slide button positions relative to full width hero */
+	}
+
+	/* Adjust Bookshelf for Mobile */
+	.bookshelf {
+		width: 100%; /* Full width */
+		max-width: 100%; /* Override desktop max-width */
+		height: auto; /* Let content determine height */
+		min-height: 50vh; /* Example: minimum height */
+		order: 2; /* Stack order */
+		flex-direction: column; /* Stack logo and grid vertically on mobile */
+	}
+
+	.logo-section,
+	.grid-section {
+		flex: none; /* Disable flex grow/shrink */
+		width: 100%; /* Take full width */
+		min-height: auto; /* Adjust min-height if needed */
+		max-height: none; /* Remove max height */
+	}
+
+	.grid-section {
+		height: auto; /* Allow grid to size naturally */
+		overflow-y: visible; /* Disable scrolling if content fits */
+		padding: 5vw; /* Adjust padding */
+	}
+	.grid-item {
+		font-size: clamp(3.5vw, 5vh, 1.5rem); /* Adjust font size for mobile */
+		min-height: 20vh; /* Adjust item height */
+	}
+
+	#prev-slide,
+	#next-slide {
+		/* Adjust positioning for full-width hero */
+		left: 10px;
+		right: auto; /* Reset right */
+		font-size: 20px;
+		padding: 8px 12px;
+	}
+	#next-slide {
+		left: auto; /* Reset left */
+		right: 10px;
+	}
+
+	/* Adjust Typography for Mobile */
+	h1 {
+		font-size: 1.8rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	#hero h2 {
+		font-size: 1.8rem;
+	} /* Already exists */
+	#hero p {
+		font-size: 1rem;
+	} /* Already exists */
+	p {
+		font-size: 1rem;
+	}
+	.credit-text {
+		line-height: 1.5;
+		font-size: 0.9rem;
+	}
+	.credit-text-small {
+		line-height: 1.3;
+		font-size: 0.8rem;
+	}
+
+	/* Adjust component sizes / styles if needed */
+	.menu-button, .menu-button-small /* etc */ {
+		/* Consider using fixed pixel values or rems instead of vw for mobile */
+		/* Example:
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        */
+	}
+}
+
+/* --- END --- */
