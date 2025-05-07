@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Impress Magazine</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="icon" type="image/x-icon" href="assets/home/icon.png" />
+		<link id="favicon" rel="shortcut icon" href="assets/home/icon.png" />
+
+		<script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+		<script>
+			(function () {
+				try {
+					const savedTheme = localStorage.getItem("theme");
+					const prefersDark = window.matchMedia(
+						"(prefers-color-scheme: dark)"
+					).matches;
+					if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+						document.documentElement.classList.add("dark");
+					} else if (savedTheme === "light") {
+						document.documentElement.classList.remove("dark");
+					} else {
+						// Default to dark if nothing set and system isn't dark
+						document.documentElement.classList.add("dark");
+					}
+				} catch (e) {
+					console.error("Error applying initial theme class:", e);
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<nav id="icon-nav">
+			<a
+				href="#"
+				aria-label="Impress Magazine"
+				class="slide-nav-trigger"
+				data-target-slide="slide-home"
+				><img src="/assets/home/icon.png"
+			/></a>
+			<a href="https://in.isesaki.in/impress-gallery" aria-label="Gallery"
+				><img src="/assets/home/icons8-gallery-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Latest Issue"
+				class="slide-nav-trigger"
+				data-target-slide="slide-latest"
+				><img src="/assets/home/icons8-magazine-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Haiku Contest"
+				class="slide-nav-trigger"
+				data-target-slide="slide-haiku"
+				><img src="/assets/home/icons8-prize-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Contact"
+				class="slide-nav-trigger"
+				data-target-slide="slide-contact"
+				><img src="/assets/home/icons8-office-phone-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="About"
+				class="slide-nav-trigger"
+				data-target-slide="slide-about"
+				><img src="/assets/home/icons8-info-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Terms of Use and Privacy Policy"
+				class="slide-nav-trigger"
+				data-target-slide="slide-terms-and-privacy"
+				><img src="/assets/home/icons8-privacy-policy-94.png"
+			/></a>
+
+			<button id="theme-toggle" aria-label="Switch theme"></button>
+
+			<button
+				id="lang-toggle"
+				onclick="document.location='index-jp.html'"
+				aria-label="Switch Language"
+			><img src="/assets/home/icons8-torii-94.png" alt="Japanese"
+			/></button>
+
+			<button id="snow-toggle" aria-label="Toggle Snowflakes">&#x2744;</button>
+		</nav>
+		<div id="container">
+			<main id="hero">
+				<div class="slides-container">
+					<div class="slide active" id="slide-home">
+						<div class="logo-section">
+							<img
+								id="theme-image"
+								src="/assets/home/icon.png"
+								alt="Impress Magazine"
+								style="border-radius: 50%"
+							/>
+							<h1 style="text-align: center">Impress Magazine</h1>
+							<p>
+								Read all the digital issues in this online app!
+								<br />
+								Also check out the supporting materials pages in our gallery!
+							</p>
+							<a href="index.html" class="cta-button">Impress Digital App</a>
+							<a
+								href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests"
+								class="cta-button"
+								>Impress Gallery</a
+							>
+						</div>
+					</div>
+					<div class="slide" id="slide-latest">
+						<img
+							id="theme-image"
+							src="/assets/magazines/Impress-2025-Spring.jpg"
+							alt="Current Issue"
+						/>
+						<h2>Read the Latest Issue</h2>
+						<p>Impress: Spring, 2025</p>
+						<a href="https://iompress-spring-2025.isesaki.in" class="cta-button"
+							>Impress: Spring, 2025</a
+						>
+					</div>
+					<div class="slide" id="slide-haiku">
+						<img
+							id="theme-image"
+							src="/assets/home/haiku.jpg"
+							alt="Haiku Poster"
+						/>
+						<h2>Haiku Contest</h2>
+						<p>Check out our haiku contest!</p>
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests"
+							class="cta-button"
+							>Haiku Contest Page</a
+						>
+					</div>
+					<div class="slide" id="slide-contact">
+						<img
+							id="theme-image"
+							src="/assets/home/icons8-office-phone-94.png"
+							alt="Contact Us"
+						/>
+						<h2>Contact Us</h2>
+						<p>
+							Questions or comments? Any suggestions or ideas? We'd love to hear
+							from you. Send us a message using our
+							<a
+								href="https://docs.google.com/forms/d/e/1FAIpQLSduXrNNZLUK3gZSrX8TZgnOXZz5zzg6VPTPdxWf3KAO8ly0jA/viewform"
+								>contact form</a
+							>.
+						</p>
+						<a
+							href="https://docs.google.com/forms/d/e/1FAIpQLSduXrNNZLUK3gZSrX8TZgnOXZz5zzg6VPTPdxWf3KAO8ly0jA/viewform"
+							class="cta-button"
+							>Contact Form</a
+						>
+					</div>
+					<div class="slide" id="slide-about">
+						<img
+							id="theme-image"
+							src="/assets/home/icons8-info-94.png"
+							alt="About Impress"
+						/>
+						<h2>About</h2>
+						<p>
+							<i>Impress Magazine</i> is a magazine for young English learners
+							and is made with love by teachers and students in Isesaki City,
+							Japan.
+						</p>
+						<h3>Other Credits</h3>
+						<p>
+							The <i>Impress</i> website and online assets were made by Isesaki
+							English Media. Icons were made by
+							<a target="_blank" href="https://icons8.com">Icons8</a>.
+						</p>
+					</div>
+					<div class="slide" id="slide-terms-and-privacy">
+						<img
+							id="theme-image"
+							src="/assets/home/icons8-privacy-policy-94.png"
+							alt="Terms of Use and Privacy Policy"
+						/>
+						<h2>Terms of Use and Privacy Policy</h2>
+						<p>Read our terms of use and privacy policy.</p>
+						<a href="terms.html" class="cta-button">Terms of Use</a>
+						<a href="privacy.html" class="cta-button">Privacy Policy</a>
+					</div>
+				</div>
+
+				<button id="prev-slide" aria-label="Previous Slide">&lt;</button>
+				<button id="next-slide" aria-label="Next Slide">&gt;</button>
+			</main>
+
+			<div class="bookshelf">
+				<div class="grid-section">
+					<div class="grid-item header"><p>2025</p></div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2025.isesaki.in"
+							><img src="assets/magazines/Impress-2025-Spring.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2025.isesaki.in"
+							><img src="assets/magazines/coming-soon.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2025.isesaki.in"
+							><img src="assets/magazines/coming-soon.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2026.isesaki.in"
+							><img src="assets/magazines/coming-soon.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests"
+							><img src="assets/magazines/coming-soon.jpg"
+						/></a>
+					</div>
+
+					<div class="grid-item header"><p>2024</p></div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2024.isesaki.in"
+							><img src="assets/magazines/Impress-2024-Spring.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2024.isesaki.in"
+							><img src="assets/magazines/Impress-2024-Summer.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2024.isesaki.in"
+							><img src="assets/magazines/Impress-2024-Fall.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2025.isesaki.in"
+							><img src="assets/magazines/Impress-2025-Winter.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2024-haiku-contest"
+							><img src="assets/magazines/Impress-2024-Haiku.jpg"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2023</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2023.isesaki.in"
+							><img src="assets/magazines/Impress-2023-Spring.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2023.isesaki.in"
+							><img src="assets/magazines/Impress-2023-Summer.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2023.isesaki.in"
+							><img src="assets/magazines/Impress-2023-Fall.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2024.isesaki.in"
+							><img src="assets/magazines/Impress-2024-Winter.jpg"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2023-haiku-contest"
+							><img src="assets/magazines/Impress-2023-Haiku.jpg"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2022</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2022.isesaki.in"
+							><img src="assets/magazines/Impress-2022-Spring.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2022.isesaki.in"
+							><img src="assets/magazines/Impress-2022-Summer.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2022.isesaki.in"
+							><img src="assets/magazines/Impress-2022-Fall.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2023.isesaki.in"
+							><img src="assets/magazines/Impress-2023-Winter.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2022-haiku-contest"
+							><img src="assets/magazines/Impress-2022-Haiku.jpg"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2021</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2021.isesaki.in"
+							><img src="assets/magazines/Impress-2021-Spring.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2021.isesaki.in"
+							><img src="assets/magazines/Impress-2021-Summer.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2021.isesaki.in"
+							><img src="assets/magazines/Impress-2021-Fall.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2022.isesaki.in"
+							><img src="assets/magazines/Impress-2022-Winter.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2021-haiku-contest"
+							><img src="assets/magazines/Impress-2021-Haiku.jpg"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2020</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2020.isesaki.in"
+							><img src="assets/magazines/Impress-2020-Spring.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2020.isesaki.in"
+							><img src="assets/magazines/Impress-2020-Summer.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2020.isesaki.in"
+							><img src="assets/magazines/Impress-2020-Fall.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2021.isesaki.in"
+							><img src="assets/magazines/Impress-2021-Winter.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2020-haiku-contest"
+							><img src="assets/magazines/Impress-2020-Haiku.png"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2019</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2019.isesaki.in"
+							><img src="assets/magazines/Impress-2019-Spring.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2019.isesaki.in"
+							><img src="assets/magazines/Impress-2019-Summer.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2019.isesaki.in"
+							><img src="assets/magazines/Impress-2019-Fall.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2020.isesaki.in"
+							><img src="assets/magazines/Impress-2020-Winter.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2019-haiku-contest"
+							><img src="assets/magazines/Impress-2019-Haiku.png"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2018</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2018.isesaki.in"
+							><img src="assets/magazines/Impress-2018-Spring.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2018.isesaki.in"
+							><img src="assets/magazines/Impress-2018-Summer.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2018.isesaki.in"
+							><img src="assets/magazines/Impress-2018-Fall.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2019.isesaki.in"
+							><img src="assets/magazines/Impress-2019-Winter.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2018-haiku-contest"
+							><img src="assets/magazines/Impress-2018-Haiku.png"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2017</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-spring-2017.isesaki.in"
+							><img src="assets/magazines/Impress-2017-Spring.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-summer-2017.isesaki.in"
+							><img src="assets/magazines/Impress-2017-Summer.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-fall-2017.isesaki.in"
+							><img src="assets/magazines/Impress-2017-Fall.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2018.isesaki.in"
+							><img src="assets/magazines/Impress-2018-Winter.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests/2017-haiku-contest"
+							><img src="assets/magazines/Impress-2017-Haiku.jpg"
+						/></a>
+					</div>
+
+					<div class="grid-item header">2016</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-winter-2016.isesaki.in"
+							><img src="assets/magazines/Impress-2016-Winter.png"
+						/></a>
+					</div>
+					<div class="grid-item" style="border-radius: 10%">
+						<a href="http://impress-latewinter-2017.isesaki.in"
+							><img src="assets/magazines/Impress-2017-LateWinter.png"
+						/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<canvas id="snowfall"></canvas>
+
+		<script src="scripts.js" defer></script>
+	</body>
+</html>

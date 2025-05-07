@@ -7,13 +7,13 @@
 
 @font-face {
 	font-family: "Klee One";
-	src: url("font/kleeone_regular.ttf") format("truetype");
+	src: url("assets/fonts/kleeone_regular.ttf") format("truetype");
 	font-display: swap; /* Improves perceived performance */
 }
 
 @font-face {
 	font-family: "Noto Sans JP";
-	src: url("font/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+	src: url("assets/fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
 	font-weight: 100;
 	font-style: normal;
 	font-display: swap; /* Improves perceived performance */
@@ -246,6 +246,8 @@ body {
 	text-shadow: var(--hero-text-shadow); /* Use theme-dependent shadow */
 	position: relative; /* Ensure text is layered above background */
 	z-index: 2;
+	margin-left: 50px; /* Account for fixed desktop nav */
+	margin-right: 50px; /* Account for fixed desktop nav */
 }
 /* Style hero CTA button using theme variables for its specific context */
 #hero .cta-button {

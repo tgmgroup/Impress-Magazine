@@ -335,7 +335,9 @@ const snowFall = (() => {
 			ctx.beginPath();
 			ctx.arc(this.position.x, this.position.y, this.size, 0, 2 * PI);
 			// You might want to tie this to the theme later
-			ctx.fillStyle = "white";
+			ctx.fillStyle = "pink"; // white for snowflakes
+			ctx.fillOpacity = 0.1; // Adjust opacity for better visibility (default to 1.0)
+			// ctx.fillStyle = `rgba(255, 255, 255, ${0.3 + this.depth * 0.7})`; // Adjust opacity based on depth
 			ctx.fill();
 		}
 	}
@@ -497,8 +499,8 @@ const snowFall = (() => {
 
 // --- Snowfall Toggle Logic (Uses new start/stop) ---
 const snowToggleButton = document.getElementById("snow-toggle");
-const snowIcon = "&#x1F6AB;"; // 🚫 Prohibited/Off symbol
-const noSnowIcon = "&#x2744;"; // ❄️ Snowflake
+const snowIcon = "&#x2744;"; // ❄️ Snowflake
+const noSnowIcon = "&#x1F6AB;"; // 🚫 Prohibited/Off symbol
 
 let isSnowEnabled = false; // Default state (will be checked against localStorage)
 
