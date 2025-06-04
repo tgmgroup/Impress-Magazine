@@ -7,13 +7,13 @@
 
 @font-face {
 	font-family: "Klee One";
-	src: url("assets/fonts/kleeone_regular.ttf") format("truetype");
+	src: url("../assets/fonts/kleeone_regular.ttf") format("truetype");
 	font-display: swap; /* Improves perceived performance */
 }
 
 @font-face {
 	font-family: "Noto Sans JP";
-	src: url("assets/fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+	src: url("../assets/fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
 	font-weight: 100;
 	font-style: normal;
 	font-display: swap; /* Improves perceived performance */
