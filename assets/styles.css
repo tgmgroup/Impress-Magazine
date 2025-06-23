@@ -13,7 +13,8 @@
 
 @font-face {
 	font-family: "Noto Sans JP";
-	src: url("../assets/fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+	src: url("../assets/fonts/NotoSansJP-VariableFont_wght.ttf")
+		format("truetype");
 	font-weight: 100;
 	font-style: normal;
 	font-display: swap; /* Improves perceived performance */
@@ -458,9 +459,53 @@ body {
 
 .grid-item img {
 	width: 100%; /* Make image fill the section */
-	height: 100%; 
+	height: 100%;
 	align-items: center;
 	object-fit: contain;
+}
+
+/* --- Bookshelf Section --- */
+.long-text-box {
+	font-family: "Noto Sans JP";
+	font-size: small;
+	min-height: 100vh;
+	height: 100%; /* Takes full height of flex container */
+	width: 100%; /* Takes half width */
+	padding: 1%;
+	overflow-y: scroll;
+	transition: width 0.3s ease, height 0.3s ease;
+	background-color: var(
+		--bg-color-bookshelf
+	); /* Optional: Give it a distinct bg */
+	box-shadow: var(--box-shadow);
+}
+
+.legal-text {
+	font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+	text-indent: -1em; /* Use em for relative indent */
+	line-height: 1.8;
+
+	padding-left: 1em;
+	margin-left: 1em;
+	color: var(--text-color);
+}
+.legal-text-li {
+	font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+	text-indent: -2em; /* Use em for relative indent */
+	line-height: 2;
+
+	padding-left: 2em;
+	margin-left: 3em;
+	color: var(--text-color);
+}
+.legal-text-title {
+	font-size: clamp(1rem, 1.3vw, 1.1rem);
+	text-indent: -2em; /* Use em for relative indent */
+	line-height: 2.5;
+
+	padding-left: 2em;
+	margin-left: 1em;
+	color: var(--text-color);
 }
 
 /* ==========================================================================

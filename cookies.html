@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Impress Magazine</title>
+		<link rel="stylesheet" href="assets/styles.css" />
+		<link rel="icon" type="image/x-icon" href="assets/home/icon.png" />
+		<link id="favicon" rel="shortcut icon" href="assets/home/icon.png" />
+
+		<script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+		<script>
+			(function () {
+				try {
+					const savedTheme = localStorage.getItem("theme");
+					const prefersDark = window.matchMedia(
+						"(prefers-color-scheme: dark)"
+					).matches;
+					if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+						document.documentElement.classList.add("dark");
+					} else if (savedTheme === "light") {
+						document.documentElement.classList.remove("dark");
+					} else {
+						// Default to dark if nothing set and system isn't dark
+						document.documentElement.classList.add("dark");
+					}
+				} catch (e) {
+					console.error("Error applying initial theme class:", e);
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<nav id="icon-nav">
+			<a href="index.html" aria-label="Home"
+				><img src="/assets/home/icon.png"
+			/></a>
+			<a href="https://in.isesaki.in/impress-gallery" aria-label="Gallery"
+				><img src="/assets/home/icons8-gallery-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Latest Issue"
+				class="slide-nav-trigger"
+				data-target-slide="slide-latest"
+				><img src="/assets/home/icons8-magazine-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Haiku Contest"
+				class="slide-nav-trigger"
+				data-target-slide="slide-haiku"
+				><img src="/assets/home/icons8-prize-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Contact"
+				class="slide-nav-trigger"
+				data-target-slide="slide-contact"
+				><img src="/assets/home/icons8-office-phone-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="About"
+				class="slide-nav-trigger"
+				data-target-slide="slide-about"
+				><img src="/assets/home/icons8-info-94.png"
+			/></a>
+			<a
+				href="#"
+				aria-label="Terms of Use and Privacy Policy"
+				class="slide-nav-trigger"
+				data-target-slide="slide-terms-and-privacy"
+				><img src="/assets/home/icons8-privacy-policy-94.png"
+			/></a>
+
+			<button id="theme-toggle" aria-label="Switch theme"></button>
+
+			<button
+				id="lang-toggle"
+				onclick="document.location='index-jp.html'"
+				aria-label="Switch Language"
+			>
+				<img src="/assets/home/icons8-torii-94.png" alt="Japanese" />
+			</button>
+
+			<button id="snow-toggle" aria-label="Toggle Snowflakes">&#x2744;</button>
+		</nav>
+		<div id="container">
+			<main id="hero">
+				<div class="slides-container">
+					<div class="slide active" id="slide-home">
+						<div class="logo-section">
+							<img
+								id="theme-image"
+								src="/assets/home/icon.png"
+								alt="Impress Magazine"
+								style="border-radius: 50%"
+							/>
+							<h1 style="text-align: center">Impress Magazine</h1>
+							<p>
+								Read all the digital issues in this online app!
+								<br />
+								Also check out the supporting materials pages in our gallery!
+							</p>
+							<a href="index.html" class="cta-button">Impress Digital App</a>
+							<a
+								href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests"
+								class="cta-button"
+								>Impress Gallery</a
+							>
+						</div>
+					</div>
+					<div class="slide" id="slide-latest">
+						<img
+							id="theme-image"
+							src="/assets/magazines/Impress-2025-Spring.jpg"
+							alt="Current Issue"
+						/>
+						<h2>Read the Latest Issue</h2>
+						<p>Impress: Spring, 2025</p>
+						<a href="https://iompress-spring-2025.isesaki.in" class="cta-button"
+							>Impress: Spring, 2025</a
+						>
+					</div>
+					<div class="slide" id="slide-haiku">
+						<img
+							id="theme-image"
+							src="/assets/home/haiku.jpg"
+							alt="Haiku Poster"
+						/>
+						<h2>Haiku Contest</h2>
+						<p>Check out our haiku contest!</p>
+						<a
+							href="https://sites.google.com/isesaki-school.ed.jp/impress/impress-contests"
+							class="cta-button"
+							>Haiku Contest Page</a
+						>
+					</div>
+					<div class="slide" id="slide-contact">
+						<img
+							id="theme-image"
+							src="/assets/home/icons8-office-phone-94.png"
+							alt="Contact Us"
+						/>
+						<h2>Contact Us</h2>
+						<p>
+							Questions or comments? Any suggestions or ideas? We'd love to hear
+							from you. Send us a message using our
+							<a
+								href="https://docs.google.com/forms/d/e/1FAIpQLSduXrNNZLUK3gZSrX8TZgnOXZz5zzg6VPTPdxWf3KAO8ly0jA/viewform"
+								>contact form</a
+							>.
+						</p>
+						<a
+							href="https://docs.google.com/forms/d/e/1FAIpQLSduXrNNZLUK3gZSrX8TZgnOXZz5zzg6VPTPdxWf3KAO8ly0jA/viewform"
+							class="cta-button"
+							>Contact Form</a
+						>
+					</div>
+					<div class="slide" id="slide-about">
+						<img
+							id="theme-image"
+							src="/assets/home/icons8-info-94.png"
+							alt="About Impress"
+						/>
+						<h2>About</h2>
+						<p>
+							<i>Impress Magazine</i> is a magazine for young English learners
+							and is made with love by teachers and students in Isesaki City,
+							Japan.
+						</p>
+						<h3>Other Credits</h3>
+						<p>
+							The <i>Impress</i> website and online assets were made by Isesaki
+							English Media. Icons were made by
+							<a target="_blank" href="https://icons8.com">Icons8</a>.
+						</p>
+					</div>
+					<div class="slide" id="slide-terms-and-privacy">
+						<img
+							id="theme-image"
+							src="/assets/home/icons8-privacy-policy-94.png"
+							alt="Terms of Use and Privacy Policy"
+						/>
+						<h2>Terms of Use and Privacy Policy</h2>
+						<p>Read our terms of use and privacy policy.</p>
+						<a href="terms.html" class="cta-button">Terms of Use</a>
+						<a href="privacy.html" class="cta-button">Privacy Policy</a>
+						<a href="cookies.html" class="cta-button">Cookie Policy</a>
+					</div>
+				</div>
+
+				<button id="prev-slide" aria-label="Previous Slide">&lt;</button>
+				<button id="next-slide" aria-label="Next Slide">&gt;</button>
+			</main>
+			<div class="long-text-box">
+				<p class="legal-text">
+					<strong>COOKIE POLICY</strong>
+				</p>
+				<p class="legal-text">
+					<strong>Last updated May 14, 2025</strong>
+				</p>
+				<p class="legal-text">
+					This Cookie Policy explains how Isesaki English Media
+					("<strong>Company</strong>," "<strong>we</strong>,"
+					"<strong>us</strong>," and "<strong>our</strong>") uses cookies and
+					similar technologies to recognize you when you visit our website at
+					<a href="https://isesaki.in" target="_blank"> https://isesaki.in </a>
+					("<strong>Website</strong>"). It explains what these technologies are
+					and why we use them, as well as your rights to control our use of
+					them.
+				</p>
+				<p class="legal-text">
+					In some cases we may use cookies to collect personal information, or
+					that becomes personal information if we combine it with other
+					information.
+				</p>
+				<p class="legal-text">
+					<strong>What are cookies?</strong>
+				</p>
+				<p class="legal-text">
+					Cookies are small data files that are placed on your computer or
+					mobile device when you visit a website. Cookies are widely used by
+					website owners in order to make their websites work, or to work more
+					efficiently, as well as to provide reporting information.
+				</p>
+				<p class="legal-text">
+					Cookies set by the website owner (in this case, Isesaki English Media) are called
+					"first-party cookies." Cookies set by parties other than the website
+					owner are called "third-party cookies." Third-party cookies enable
+					third-party features or functionality to be provided on or through the
+					website (e.g., advertising, interactive content, and analytics). The
+					parties that set these third-party cookies can recognize your computer
+					both when it visits the website in question and also when it visits
+					certain other websites.
+				</p>
+				<p class="legal-text">
+					<strong>Why do we use cookies?</strong>
+				</p>
+				<p class="legal-text">
+					We use first- and third-party cookies for several reasons. Some
+					cookies are required for technical reasons in order for our Website to
+					operate, and we refer to these as "essential" or "strictly necessary"
+					cookies. Other cookies also enable us to track and target the
+					interests of our users to enhance the experience on our Online
+					Properties. Third parties serve cookies through our Website for
+					advertising, analytics, and other purposes. This is described in more
+					detail below.
+				</p>
+				<p class="legal-text">
+					<strong>How can I control cookies?</strong>
+				</p>
+				<p class="legal-text">
+					You have the right to decide whether to accept or reject cookies. You
+					can exercise your cookie rights by setting your preferences in the
+					Cookie Consent Manager. The Cookie Consent Manager allows you to
+					select which categories of cookies you accept or reject. Essential
+					cookies cannot be rejected as they are strictly necessary to provide
+					you with services.
+				</p>
+				<p class="legal-text">
+					The Cookie Consent Manager can be found in the notification banner and
+					on our Website. If you choose to reject cookies, you may still use our
+					Website though your access to some functionality and areas of our
+					Website may be restricted. You may also set or amend your web browser
+					controls to accept or refuse cookies.
+				</p>
+				<p class="legal-text">
+					The specific types of first- and third-party cookies served through
+					our Website and the purposes they perform are described in the table
+					below (please note that the specific cookies served may vary depending
+					on the specific Online Properties you visit): <strong><u></u></strong>
+				</p>
+				<p class="legal-text">
+					<strong><u>Essential website cookies:</u></strong>
+				</p>
+				<p class="legal-text">
+					These cookies are strictly necessary to provide you with services
+					available through our Website and to use some of its features, such as
+					access to secure areas.
+				</p>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">__cf_bm</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Cloudflare places the cookie on end-user devices that access
+									customer sites protected by Bot Management or Bot Fight Mode.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.pexels.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Cloudflare
+									<a
+										href="https://jetpack.com/support/cookies/"
+										target="_blank"
+									>
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">http_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">30 minutes</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="legal-text">
+					<strong><u></u></strong>
+				</p>
+				<p class="legal-text">
+					<strong><u>Performance and functionality cookies:</u></strong>
+				</p>
+				<p class="legal-text">
+					These cookies are used to enhance the performance and functionality of
+					our Website but are non-essential to their use. However, without these
+					cookies, certain functionality (like videos) may become unavailable.
+				</p>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">yt-remote-device-id</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">
+									Stores a unique ID for the user's device for YouTube
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">www.youtube.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">
+									YouTube
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">html_local_storage</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">persistent</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">yt-remote-connected-devices</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Stores a list of connected devices for YouTube
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">www.youtube.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									YouTube
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">html_local_storage</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">persistent</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">ytidb::LAST_RESULT_ENTRY_KEY</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Stores the last result entry key used by YouTube
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">www.youtube.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									YouTube
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">html_local_storage</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">persistent</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="legal-text">
+					<strong><u></u></strong>
+				</p>
+				<p class="legal-text">
+					<strong><u>Analytics and customization cookies:</u></strong>
+				</p>
+				<p class="legal-text">
+					These cookies collect information that is used either in aggregate
+					form to help us understand how our Website is being used or how
+					effective our marketing campaigns are, or to help us customize our
+					Website for you.
+				</p>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">#collect</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">
+									Sends data such as visitor’s behavior and device to Google
+									Analytics. It is able to keep track of the visitor across
+									marketing channels and devices. It is a pixel tracker type
+									cookie whose activity lasts within the browsing session.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">www.google-analytics.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">
+									Google Analytics
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">pixel_tracker</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">session</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">NID</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Set by Google to set a unique user ID to remember user
+									preferences. Persistent cookie that stays for 182 days
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.google.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Google
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">6 months</p>
+							</td>
+						</tr>
+						<tr height="0">
+							<td width="67">
+								<br />
+							</td>
+							<td width="2">
+								<br />
+							</td>
+							<td width="178">
+								<br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">_bit</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Contains tracking data by URL shortening service Bitly which
+									helps them to improve their services
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.in.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Bitly
+									<a href="https://bitly.com/pages/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">5 months 27 days</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">_gid</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">
+									Keeps an entry of unique ID which is then used to come up with
+									statistical data on website usage by visitors. It is a HTTP
+									cookie type and expires after a browsing session.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">
+									Google Analytics
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">http_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">23 hours 59 minutes</p>
+							</td>
+						</tr>
+						<tr height="0">
+							<td width="67">
+								<br />
+							</td>
+							<td width="2">
+								<br />
+							</td>
+							<td width="175">
+								<br />
+							</td>
+							<td width="3">
+								<br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">_ga</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Records a particular ID used to come up with data about
+									website usage by the user
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Google Analytics
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">http_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">1 year 1 month 4 days</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">NID</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">
+									Set by Google to set a unique user ID to remember user
+									preferences. Persistent cookie that stays for 182 days
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">.translate-pa.googleapis.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">
+									Google
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">6 months</p>
+							</td>
+						</tr>
+						<tr height="0">
+							<td width="67">
+								<br />
+							</td>
+							<td width="2">
+								<br />
+							</td>
+							<td width="175">
+								<br />
+							</td>
+							<td width="3">
+								<br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">_ga_#</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">
+									Used to distinguish individual users by means of designation
+									of a randomly generated number as client identifier, which
+									allows calculation of visits and sessions
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">
+									Google Analytics
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">http_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="3" valign="top">
+								<p class="legal-text">1 year 1 month 4 days</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">t.gif</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">pixel.wp.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">pixel_tracker</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">session</p>
+							</td>
+						</tr>
+						<tr height="0">
+							<td width="67">
+								<br />
+							</td>
+							<td width="2">
+								<br />
+							</td>
+							<td width="175">
+								<br />
+							</td>
+							<td width="3">
+								<br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">g.gif</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">pixel.wp.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">pixel_tracker</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">session</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="legal-text">
+					<strong><u></u></strong>
+				</p>
+				<p class="legal-text">
+					<strong><u>Advertising cookies:</u></strong>
+				</p>
+				<p class="legal-text">
+					These cookies are used to make advertising messages more relevant to
+					you. They perform functions like preventing the same ad from
+					continuously reappearing, ensuring that ads are properly displayed for
+					advertisers, and in some cases selecting advertisements that are based
+					on your interests.
+				</p>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">YSC</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									YouTube is a Google-owned platform for hosting and sharing
+									videos. YouTube collects user data through videos embedded in
+									websites, which is aggregated with profile data from other
+									Google services in order to display targeted advertising to
+									web visitors across a broad range of their own and other
+									websites. Used by Google in combination with SID to verify
+									Google user account and most recent login time.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.youtube.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									YouTube
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">session</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">VISITOR_INFO1_LIVE</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									YouTube is a Google-owned platform for hosting and sharing
+									videos. YouTube collects user data through videos embedded in
+									websites, which is aggregated with profile data from other
+									Google services in order to display targeted advertising to
+									web visitors across a broad range of their own and other
+									websites. Used by Google in combination with SID to verify
+									Google user account and most recent login time.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.youtube.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									YouTube
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">5 months 27 days</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">ga-audiences</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Purpose:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									Used by Google AdWords to re-engage visitors that are likely
+									to convert to customers based on the visitor's online
+									behaviour across websites
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">www.google.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Service:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									AdWords
+									<a href="https://policies.google.com/privacy" target="_blank">
+										View Service Privacy Policy
+									</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">pixel_tracker</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">session</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="legal-text">
+					<strong><u></u></strong>
+				</p>
+				<p class="legal-text">
+					<strong><u>Unclassified cookies:</u></strong>
+				</p>
+				<p class="legal-text">
+					These are cookies that have not yet been categorized. We are in the
+					process of classifying these cookies with the help of their providers.
+				</p>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">VISITOR_PRIVACY_METADATA</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">.youtube.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">5 months 27 days</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">cf_clearance</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">http_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">11 months 30 days</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">
+									wp_wpfileupload_33bd20edd0002853539a10b2591f3522
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">.www.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">2 days</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">wpEmojiSettingsSupports</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">www.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">html_session_storage</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">session</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">google-analytics_v4_253f__ga4sid</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">30 minutes</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">google-analytics_v4_253f__ga4</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">999 years 4 months</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">google-analytics_v4_253f__let</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">999 years 4 months</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">_ir</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">api.pinterest.com</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">30 minutes</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">
+									google-analytics_v4_253f__engagementStart
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">999 years 4 months</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">
+									google-analytics_v4_253f___z_ga_audiences
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">999 years 4 months</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="0" cellspacing="5" cellpadding="0">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">google-analytics_v4_253f__counter</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td valign="top">
+								<p class="legal-text">999 years 4 months</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Name:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">
+									google-analytics_v4_253f__session_counter
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Provider:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">.isesaki.in</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Type:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">server_cookie</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top">
+								<p class="legal-text">Expires in:</p>
+							</td>
+							<td colspan="2" valign="top">
+								<p class="legal-text">999 years 4 months</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="legal-text">
+					<strong>How can I control cookies on my browser?</strong>
+				</p>
+				<p class="legal-text">
+					As the means by which you can refuse cookies through your web browser
+					controls vary from browser to browser, you should visit your browser's
+					help menu for more information. The following is information about how
+					to manage cookies on the most popular browsers:
+				</p>
+				<ul type="disc">
+					<li class="legal-text-li">
+						<a
+							href="https://support.google.com/chrome/answer/95647#zippy=%2Callow-or-block-cookies"
+							target="_blank"
+						>
+							Chrome
+						</a>
+					</li>
+					<li class="legal-text-li">
+						<a
+							href="https://support.microsoft.com/en-us/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d"
+							target="_blank"
+						>
+							Internet Explorer
+						</a>
+					</li>
+					<li class="legal-text-li">
+						<a
+							href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop?redirectslug=enable-and-disable-cookies-website-preferences&amp;redirectlocale=en-US"
+							target="_blank"
+						>
+							Firefox
+						</a>
+					</li>
+					<li class="legal-text-li">
+						<a
+							href="https://support.apple.com/en-ie/guide/safari/sfri11471/mac"
+							target="_blank"
+						>
+							Safari
+						</a>
+					</li>
+					<li class="legal-text-li">
+						<a
+							href="https://support.microsoft.com/en-us/windows/microsoft-edge-browsing-data-and-privacy-bb8174ba-9d73-dcf2-9b4a-c582b4e640dd"
+							target="_blank"
+						>
+							Edge
+						</a>
+					</li>
+					<li class="legal-text-li">
+						<a
+							href="https://help.opera.com/en/latest/web-preferences/"
+							target="_blank"
+						>
+							Opera
+						</a>
+					</li>
+				</ul>
+				<p class="legal-text">
+					In addition, most advertising networks offer you a way to opt out of
+					targeted advertising. If you would like to find out more information,
+					please visit:
+				</p>
+				<ul type="disc">
+					<li class="legal-text-li">
+						<a href="http://www.aboutads.info/choices/" target="_blank">
+							Digital Advertising Alliance
+						</a>
+					</li>
+					<li class="legal-text-li">
+						<a href="https://youradchoices.ca/" target="_blank">
+							Digital Advertising Alliance of Canada
+						</a>
+					</li>
+					<li class="legal-text-li">
+						<a href="http://www.youronlinechoices.com/" target="_blank">
+							European Interactive Digital Advertising Alliance
+						</a>
+					</li>
+				</ul>
+				<p class="legal-text">
+					<strong
+						>What about other tracking technologies, like web beacons?</strong
+					>
+				</p>
+				<p class="legal-text">
+					Cookies are not the only way to recognize or track visitors to a
+					website. We may use other, similar technologies from time to time,
+					like web beacons (sometimes called "tracking pixels" or "clear gifs").
+					These are tiny graphics files that contain a unique identifier that
+					enables us to recognize when someone has visited our Website or opened
+					an email including them. This allows us, for example, to monitor the
+					traffic patterns of users from one page within a website to another,
+					to deliver or communicate with cookies, to understand whether you have
+					come to the website from an online advertisement displayed on a
+					third-party website, to improve site performance, and to measure the
+					success of email marketing campaigns. In many instances, these
+					technologies are reliant on cookies to function properly, and so
+					declining cookies will impair their functioning.
+				</p>
+				<p class="legal-text">
+					<strong>Do you use Flash cookies or Local Shared Objects?</strong>
+				</p>
+				<p class="legal-text">
+					Websites may also use so-called "Flash Cookies" (also known as Local
+					Shared Objects or "LSOs") to, among other things, collect and store
+					information about your use of our services, fraud prevention, and for
+					other site operations.
+				</p>
+				<p class="legal-text">
+					If you do not want Flash Cookies stored on your computer, you can
+					adjust the settings of your Flash player to block Flash Cookies
+					storage using the tools contained in the
+					<a
+						href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html"
+						target="_blank"
+					>
+						Website Storage Settings Panel
+					</a>
+					. You can also control Flash Cookies by going to the
+					<a
+						href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager03.html"
+						target="_blank"
+					>
+						Global Storage Settings Panel
+					</a>
+					and following the instructions (which may include instructions that
+					explain, for example, how to delete existing Flash Cookies (referred
+					to "information" on the Macromedia site), how to prevent Flash LSOs
+					from being placed on your computer without your being asked, and (for
+					Flash Player 8 and later) how to block Flash Cookies that are not
+					being delivered by the operator of the page you are on at the time).
+				</p>
+				<p class="legal-text">
+					Please note that setting the Flash Player to restrict or limit
+					acceptance of Flash Cookies may reduce or impede the functionality of
+					some Flash applications, including, potentially, Flash applications
+					used in connection with our services or online content.
+				</p>
+				<p class="legal-text">
+					<strong>Do you serve targeted advertising?</strong>
+				</p>
+				<p class="legal-text">
+					Third parties may serve cookies on your computer or mobile device to
+					serve advertising through our Website. These companies may use
+					information about your visits to this and other websites in order to
+					provide relevant advertisements about goods and services that you may
+					be interested in. They may also employ technology that is used to
+					measure the effectiveness of advertisements. They can accomplish this
+					by using cookies or web beacons to collect information about your
+					visits to this and other sites in order to provide relevant
+					advertisements about goods and services of potential interest to you.
+					The information collected through this process does not enable us or
+					them to identify your name, contact details, or other details that
+					directly identify you unless you choose to provide these.
+				</p>
+				<p class="legal-text">
+					<strong>How often will you update this Cookie Policy?</strong>
+				</p>
+				<p class="legal-text">
+					We may update this Cookie Policy from time to time in order to
+					reflect, for example, changes to the cookies we use or for other
+					operational, legal, or regulatory reasons. Please therefore revisit
+					this Cookie Policy regularly to stay informed about our use of cookies
+					and related technologies.
+				</p>
+				<p class="legal-text">
+					The date at the top of this Cookie Policy indicates when it was last
+					updated.
+				</p>
+				<p class="legal-text">
+					<strong>Where can I get further information?</strong>
+				</p>
+				<p class="legal-text">
+					If you have any questions about our use of cookies or other
+					technologies, please contact us using
+					<a
+						href="https://docs.google.com/forms/d/e/1FAIpQLSduXrNNZLUK3gZSrX8TZgnOXZz5zzg6VPTPdxWf3KAO8ly0jA/viewform"
+						target="_blank"
+						>our contact form</a
+					>.
+				</p>
+			</div>
+		</div>
+
+		<canvas id="snowfall"></canvas>
+
+		<script src="assets/scripts.js" defer></script>
+	</body>
+</html>
