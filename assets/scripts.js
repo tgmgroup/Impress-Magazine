@@ -335,7 +335,7 @@ const snowFall = (() => {
 			ctx.beginPath();
 			ctx.arc(this.position.x, this.position.y, this.size, 0, 2 * PI);
 			// You might want to tie this to the theme later
-			ctx.fillStyle = "pink"; // white for snowflakes
+			ctx.fillStyle = "yellow"; // white for snowflakes
 			ctx.fillOpacity = 0.1; // Adjust opacity for better visibility (default to 1.0)
 			// ctx.fillStyle = `rgba(255, 255, 255, ${0.3 + this.depth * 0.7})`; // Adjust opacity based on depth
 			ctx.fill();
