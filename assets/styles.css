@@ -55,12 +55,19 @@
 	--slide-button-text: white;
 
 	/* --- Hero Gradient Colors (Light Mode - Slightly Brighter/Different Palette) --- */
-	--hero-grad-1: hsl(280, 48%, 74%); /* Muted Violet */
-	--hero-grad-2: hsl(240, 47%, 79%); /* Muted Blue */
-	--hero-grad-3: hsl(180, 40%, 78%); /* Muted Cyan */
-	--hero-grad-4: hsl(120, 47%, 79%); /* Muted Green */
-	--hero-grad-5: hsl(60, 46%, 84%); /* Muted Yellow */
-	--hero-grad-6: hsl(20, 53%, 84%); /* Muted Orange */
+	--hero-grad-1: hsl(46, 73%, 57%); /* Halloween Colors */
+	--hero-grad-2: hsl(18, 48%, 79%); /* Muted Blue */
+	--hero-grad-3: hsl(28, 31%, 53%); /* Muted Cyan */
+	--hero-grad-4: hsl(120, 16%, 53%); /* Muted Green */
+	--hero-grad-5: hsl(60, 25%, 62%); /* Muted Yellow */
+	--hero-grad-6: hsl(270, 8%, 53%); /* Muted Orange */
+	/* --- Original  Colors
+	--hero-grad-1: hsl(280, 48%, 74%); 
+	--hero-grad-2: hsl(240, 47%, 79%); 
+	--hero-grad-3: hsl(180, 40%, 78%); 
+	--hero-grad-4: hsl(120, 47%, 79%);  
+	--hero-grad-5: hsl(60, 46%, 84%);  
+	--hero-grad-6: hsl(20, 53%, 84%);  */
 
 	--hero-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.003); /* Shadow for light mode */
 	--hero-cta-bg: hsla(
