@@ -25,7 +25,7 @@ This is the source code for Impress Magazine's digital bookshelf. *Impress Magaz
 
 Read our magazine at [impress.isesaki.in](https://impress.isesaki.in).
 
-This landing page at [impress.isesaki.in](https://impress.isesaki.in) links to each individual digital version of the magazine, such as [impress-summer-2025.isesaki.in](https://impress-summer-2025.isesaki.in). Unfortunately, the 1GB GitHub repository limit prevents us from building a monolithic app.
+This landing page at [impress.isesaki.in](https://impress.isesaki.in) links to each individual digital version of the magazine, such as [impress-winter-2026.isesaki.in](https://impress-summer-2025.isesaki.in). Unfortunately, the 1GB GitHub repository limit prevents us from building a monolithic app.
 
 You can find our companion materials for all of issues here at our gallery site: [Gallery](https://in.isesaki.in/impress-gallery).
 
