@@ -1,20 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Impress Magazine</title>
+		<title data-i18n="doc_title">Impress Magazine</title>
 		<link rel="stylesheet" href="assets/styles.css" />
 		<link rel="icon" type="image/x-icon" href="assets/home/icon.png" />
 		<link id="favicon" rel="shortcut icon" href="assets/home/icon.png" />
 
 		<script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+		<link rel="manifest" href="manifest.json" />
+		<meta name="theme-color" content="#1a1a1a" />
+		<link rel="apple-touch-icon" href="assets/home/icon.png" />
 		<script>
 			(function () {
 				try {
 					const savedTheme = localStorage.getItem("theme");
 					const prefersDark = window.matchMedia(
-						"(prefers-color-scheme: dark)"
+						"(prefers-color-scheme: dark)",
 					).matches;
 					if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
 						document.documentElement.classList.add("dark");
@@ -82,7 +85,7 @@
 
 			<button
 				id="lang-toggle"
-				onclick="document.location='index-jp.html'"
+				onclick="document.location = 'index-jp.html'"
 				aria-label="Switch Language"
 			>
 				<img src="assets/home/icons8-torii-94.png" alt="Japanese" />
@@ -90,6 +93,7 @@
 
 			<button id="snow-toggle" aria-label="Toggle Snowflakes">&#x2744;</button>
 		</nav>
+
 		<div id="container">
 			<main id="hero">
 				<div class="slides-container">
@@ -101,56 +105,65 @@
 								alt="Impress Magazine"
 								style="border-radius: 50%"
 							/>
-							<h1 style="text-align: center">Impress Magazine</h1>
-							<p>
-								Read all the digital issues in this online app!
-								<br />
+							<h1 style="text-align: center" data-i18n="home_h1">
+								Impress Magazine
+							</h1>
+							<p data-i18n="home_p">
+								Read all the digital issues in this online app!<br />
 								Also check out the supporting materials pages in our gallery!
 							</p>
-							<a href="index.html" class="cta-button">Impress Digital App</a>
+							<a href="index.html" class="cta-button" data-i18n="btn_app"
+								>Impress Digital App</a
+							>
 							<a
 								href="https://sites.google.com/isesaki-school.ed.jp/impress/"
 								class="cta-button"
+								data-i18n="btn_gallery"
 								>Impress Gallery</a
 							>
 						</div>
 					</div>
 
-					<!-- Change this area for each new issue -->
 					<div class="slide" id="slide-latest">
 						<img
 							id="theme-image"
 							src="assets/magazines/Impress-2026-Winter.jpg"
 							alt="Current Issue"
 						/>
-						<h2>Read the Latest Issue</h2>
-						<p>Impress: Winter, 2026</p>
+						<h2 data-i18n="latest_h2">Read the Latest Issue</h2>
+						<p data-i18n="latest_name">Impress: Winter, 2026</p>
 						<a
 							href="https://s.isesaki.in/impress-winter-2026"
 							class="cta-button"
+							data-i18n="latest_btn"
 							>Impress: Winter, 2026</a
 						>
 					</div>
+
 					<div class="slide" id="slide-haiku">
 						<img
 							id="theme-image"
 							src="assets/home/haiku.jpg"
 							alt="Haiku Poster"
 						/>
-						<h2>Haiku Contest</h2>
-						<p>Check out our haiku contest!</p>
-						<a href="https://s.isesaki.in/contest" class="cta-button"
+						<h2 data-i18n="haiku_h2">Haiku Contest</h2>
+						<p data-i18n="haiku_p">Check out our haiku contest!</p>
+						<a
+							href="https://s.isesaki.in/contest"
+							class="cta-button"
+							data-i18n="haiku_btn"
 							>Haiku Contest Page</a
 						>
 					</div>
+
 					<div class="slide" id="slide-contact">
 						<img
 							id="theme-image"
 							src="assets/home/icons8-office-phone-94.png"
 							alt="Contact Us"
 						/>
-						<h2>Contact Us</h2>
-						<p>
+						<h2 data-i18n="contact_h2">Contact Us</h2>
+						<p data-i18n="contact_p">
 							Questions or comments? Any suggestions or ideas? We'd love to hear
 							from you. Send us a message using our
 							<a
@@ -161,44 +174,52 @@
 						<a
 							href="https://docs.google.com/forms/d/e/1FAIpQLSduXrNNZLUK3gZSrX8TZgnOXZz5zzg6VPTPdxWf3KAO8ly0jA/viewform"
 							class="cta-button"
+							data-i18n="contact_btn"
 							>Contact Form</a
 						>
 					</div>
+
 					<div class="slide" id="slide-about">
 						<img
 							id="theme-image"
 							src="assets/home/icons8-info-94.png"
 							alt="About Impress"
 						/>
-						<h2>About</h2>
-						<p>
+						<h2 data-i18n="about_h2">About</h2>
+						<p data-i18n="about_p">
 							<i>Impress Magazine</i> is a magazine for young English learners
 							and is made with love by teachers and students in Isesaki City,
 							Japan.
 						</p>
-						<h3>Other Credits</h3>
-						<p>
+						<h3 data-i18n="about_credits_h3">Other Credits</h3>
+						<p data-i18n="about_credits_p">
 							The <i>Impress</i> website and online assets were made by Isesaki
 							English Media. Icons were made by
 							<a target="_blank" href="https://icons8.com">Icons8</a>.
 						</p>
 					</div>
+
 					<div class="slide" id="slide-terms-and-privacy">
 						<img
 							id="theme-image"
 							src="assets/home/icons8-privacy-policy-94.png"
-							alt="Terms of Use and Privacy Policy"
+							alt="Terms"
 						/>
-						<h2>Terms of Use and Privacy Policy</h2>
-						<p>Read our terms of use and privacy policy.</p>
-						<a href="terms.html" class="cta-button">Terms of Use</a>
-						<a href="privacy.html" class="cta-button">Privacy Policy</a>
-						<a href="cookies.html" class="cta-button">Cookie Policy</a>
+						<h2 data-i18n="terms_h2">Terms of Use and Privacy Policy</h2>
+						<p data-i18n="terms_p">Read our terms of use and privacy policy.</p>
+						<a href="terms.html" class="cta-button" data-i18n="btn_terms"
+							>Terms of Use</a
+						>
+						<a href="privacy.html" class="cta-button" data-i18n="btn_privacy"
+							>Privacy Policy</a
+						>
+						<a href="cookies.html" class="cta-button" data-i18n="btn_cookies"
+							>Cookie Policy</a
+						>
 					</div>
 				</div>
-
-				<button id="prev-slide" aria-label="Previous Slide">&lt;</button>
-				<button id="next-slide" aria-label="Next Slide">&gt;</button>
+				<button id="prev-slide">&lt;</button>
+				<button id="next-slide">&gt;</button>
 			</main>
 
 			<div class="bookshelf">
@@ -462,9 +483,7 @@
 				</div>
 			</div>
 		</div>
-
 		<canvas id="snowfall"></canvas>
-
 		<script src="assets/scripts.js" defer></script>
 	</body>
 </html>

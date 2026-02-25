@@ -1,0 +1,54 @@
+{
+	"common": {
+		"site_title": "Impress Magazine",
+		"theme_toggle": "テーマ変更",
+		"lang_toggle": "言語変更",
+		"snow_toggle": "雪有無",
+		"prev_slide": "前のスライド",
+		"next_slide": "次のスライド"
+	},
+	"nav": {
+		"home": "インプレス・マガジン",
+		"gallery": "インプレス・ギャラリー",
+		"latest": "最新号",
+		"haiku": "英語俳句コンテスト",
+		"contact": "連絡",
+		"about": "インプレスについて",
+		"terms_privacy": "利用規約・ プライバシーポリシー"
+	},
+	"home_slide": {
+		"title": "Impress Magazine",
+		"description": "このオンラインアプリですべてのデジタル版をお読みください！ギャラリーのサポート資料ページもご覧ください。",
+		"btn_digital": "インプレスデジタル版",
+		"btn_gallery": "インプレスギャラリー"
+	},
+	"latest_slide": {
+		"heading": "最新号を読もう！",
+		"issue_name": "インプレス: 2026年・冬号",
+		"cta_button": "インプレス: 2026年・冬号"
+	},
+	"haiku_slide": {
+		"heading": "インプレス・英語俳句コンテスト",
+		"description": "俳句コンテストをご覧ください！",
+		"cta_button": "英語俳句コンテストページ"
+	},
+	"contact_slide": {
+		"heading": "お問合せ",
+		"description": "ご質問やご意見は？何かご提案やアイデアはありますか？ぜひお聞かせください。",
+		"link_text": "お問い合わせフォーム",
+		"description_suffix": "からメッセージをお送りください。",
+		"cta_button": "お問い合わせフォーム"
+	},
+	"about_slide": {
+		"heading": "インプレスマガジンについて",
+		"description": "インプレスマガジンは、伊勢崎市の先生と生徒が愛情を込めて作る、若い英語学習者のための雑誌です。",
+		"credits_heading": "その他のクレジット",
+		"credits_description": "インプレスのウェブサイトとオンラインアセットはいせさきイングリッシュメディアが制作しました。アイコンはIcons8によるものです。"
+	},
+	"privacy_slide": {
+		"heading": "利用規約とプライバシーポリシー",
+		"description": "利用規約とプライバシーポリシーをお読みください。",
+		"btn_terms": "利用規約",
+		"btn_privacy": "プライバシーポリシー"
+	}
+}

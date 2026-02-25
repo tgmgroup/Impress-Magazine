@@ -63,14 +63,14 @@ try {
 			} catch (e) {
 				console.warn(
 					"Could not access localStorage in system theme listener.",
-					e
+					e,
 				);
 			}
 		});
 } catch (e) {
 	console.warn(
 		"System theme change listener not supported or failed to attach.",
-		e
+		e,
 	);
 }
 // --- End Theme Toggle Logic ---
@@ -173,7 +173,7 @@ if (slideTriggers.length > 0) {
 	});
 } else {
 	console.warn(
-		"No slide trigger elements found with class '.slide-nav-trigger'."
+		"No slide trigger elements found with class '.slide-nav-trigger'.",
 	);
 }
 if (slidesContainer) {
@@ -183,7 +183,7 @@ if (slidesContainer) {
 	slidesContainer.addEventListener("mouseleave", startSlideShow);
 } else {
 	console.warn(
-		"Slides container ('.slides-container') not found for hover effect."
+		"Slides container ('.slides-container') not found for hover effect.",
 	);
 }
 // --- End Slideshow Logic ---
@@ -206,18 +206,18 @@ const snowFall = (() => {
 	//----------------------------------
 	// Constants
 	//----------------------------------
-    const FLAKE_FREQUENCY = 2;
-    const FLAKE_MIN_SPEED = 10;
-    const FLAKE_MAX_SPEED = 100;
-    const FLAKE_SIZE_NOISE = 0.9;
-    const FLAKE_MIN_SIZE = 0.1;
-    const FLAKE_MAX_SIZE = 2;
-    const FLAKE_FRICTION = 0.035;
-    const FLAKE_NOISE_X = 0.07;
-    const FLAKE_NOISE_Y = 0.02;
-    const PI = Math.PI;
-    const FPS = 60;
-    // const FLAKE_FREQUENCY = 7;
+	const FLAKE_FREQUENCY = 2;
+	const FLAKE_MIN_SPEED = 10;
+	const FLAKE_MAX_SPEED = 100;
+	const FLAKE_SIZE_NOISE = 0.9;
+	const FLAKE_MIN_SIZE = 0.1;
+	const FLAKE_MAX_SIZE = 2;
+	const FLAKE_FRICTION = 0.035;
+	const FLAKE_NOISE_X = 0.07;
+	const FLAKE_NOISE_Y = 0.02;
+	const PI = Math.PI;
+	const FPS = 60;
+	// const FLAKE_FREQUENCY = 7;
 	// const FLAKE_MIN_SPEED = 30;
 	// const FLAKE_MAX_SPEED = 180;
 	// const FLAKE_SIZE_NOISE = 0.5;
@@ -268,7 +268,7 @@ const snowFall = (() => {
 		}
 		constructor(
 			position = { x: 0, y: 0 },
-			{ mass = 0, friction = 0, initialSpeed = { x: 0, y: 0 } }
+			{ mass = 0, friction = 0, initialSpeed = { x: 0, y: 0 } },
 		) {
 			this.position = new Point(position.x, position.y);
 			this.mass = mass;
@@ -336,7 +336,7 @@ const snowFall = (() => {
 			// Simpler approach: Directly translate position by noise amount this frame
 			const noiseForce = new Vector(
 				(random(-100, 100) / 100) * FLAKE_NOISE_X * this.depth,
-				(random(-100, 100) / 100) * FLAKE_NOISE_Y * this.depth
+				(random(-100, 100) / 100) * FLAKE_NOISE_Y * this.depth,
 			);
 			this.position.translate(noiseForce);
 		}
@@ -440,7 +440,7 @@ const snowFall = (() => {
 		canvas = document.getElementById("snowfall");
 		if (!canvas || typeof canvas.getContext !== "function") {
 			console.error(
-				"Snowfall effect requires a <canvas id='snowfall'></canvas> element."
+				"Snowfall effect requires a <canvas id='snowfall'></canvas> element.",
 			);
 			return false; // Indicate initialization failure
 		}
@@ -458,7 +458,7 @@ const snowFall = (() => {
 	function start() {
 		if (!canvas) {
 			console.error(
-				"Snowfall cannot start: not initialized or canvas not found."
+				"Snowfall cannot start: not initialized or canvas not found.",
 			);
 			return;
 		}
@@ -602,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		} else {
 			console.error(
-				"DOM Ready: Snowfall initialization failed (e.g., canvas not found)."
+				"DOM Ready: Snowfall initialization failed (e.g., canvas not found).",
 			);
 		}
 	} else {
@@ -610,3 +610,120 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 // --- End Initializations ---
+
+async function loadLanguage(lang) {
+	const response = await fetch(`./assets/lang/${lang}.json`);
+	const translations = await response.json();
+
+	// Example: Updating the hero title
+	document.querySelector("h1").textContent = translations.home_slide.title;
+
+	// Save preference to localStorage
+	localStorage.setItem("preferredLang", lang);
+}
+
+let currentLang = localStorage.getItem("preferredLang") || "en";
+
+const langConfig = {
+	en: { icon: "assets/home/icons8-torii-94.png", label: "日本語へ切り替え" },
+	ja: {
+		icon: "assets/home/icons8-us-capitol-94.png",
+		label: "Switch to English",
+	},
+};
+
+async function updateLanguage(lang) {
+	try {
+		const response = await fetch(`./assets/lang/${lang}.json`);
+		const data = await response.json();
+
+		// --- 1. Common Elements & Navigation ---
+		document.title = data.common.site_title;
+		document.getElementById("theme-toggle").ariaLabel =
+			data.common.theme_toggle;
+		document.getElementById("snow-toggle").ariaLabel = data.common.snow_toggle;
+		document.getElementById("prev-slide").ariaLabel = data.common.prev_slide;
+		document.getElementById("next-slide").ariaLabel = data.common.next_slide;
+
+		// Nav Icons aria-labels
+		const navLinks = document.querySelectorAll("#icon-nav .slide-nav-trigger");
+		navLinks.forEach((link) => {
+			const target = link.getAttribute("data-target-slide");
+			if (target === "slide-home") link.ariaLabel = data.nav.home;
+			if (target === "slide-latest") link.ariaLabel = data.nav.latest;
+			if (target === "slide-haiku") link.ariaLabel = data.nav.haiku;
+			if (target === "slide-contact") link.ariaLabel = data.nav.contact;
+			if (target === "slide-about") link.ariaLabel = data.nav.about;
+			if (target === "slide-terms-and-privacy")
+				link.ariaLabel = data.nav.terms_privacy;
+		});
+
+		// --- 2. Home Slide ---
+		const home = document.getElementById("slide-home");
+		home.querySelector("h1").textContent = data.home_slide.title;
+		home.querySelector("p").textContent = data.home_slide.description;
+		const homeBtns = home.querySelectorAll(".cta-button");
+		homeBtns[0].textContent = data.home_slide.btn_digital;
+		homeBtns[1].textContent = data.home_slide.btn_gallery;
+
+		// --- 3. Latest Issue Slide ---
+		const latest = document.getElementById("slide-latest");
+		latest.querySelector("h2").textContent = data.latest_slide.heading;
+		latest.querySelector("p").textContent = data.latest_slide.issue_name;
+		latest.querySelector(".cta-button").textContent =
+			data.latest_slide.cta_button;
+
+		// --- 4. Haiku Slide ---
+		const haiku = document.getElementById("slide-haiku");
+		haiku.querySelector("h2").textContent = data.haiku_slide.heading;
+		haiku.querySelector("p").textContent = data.haiku_slide.description;
+		haiku.querySelector(".cta-button").textContent =
+			data.haiku_slide.cta_button;
+
+		// --- 5. Contact Slide ---
+		const contact = document.getElementById("slide-contact");
+		contact.querySelector("h2").textContent = data.contact_slide.heading;
+		// Reconstructing the paragraph with the link inside
+		contact.querySelector("p").innerHTML =
+			`${data.contact_slide.description} <a href="https://docs.google.com/forms/d/e/1FAIpQLSduXrNNZLUK3gZSrX8TZgnOXZz5zzg6VPTPdxWf3KAO8ly0jA/viewform">${data.contact_slide.link_text}</a> ${data.contact_slide.description_suffix}`;
+		contact.querySelector(".cta-button").textContent =
+			data.contact_slide.cta_button;
+
+		// --- 6. About Slide ---
+		const about = document.getElementById("slide-about");
+		about.querySelector("h2").textContent = data.about_slide.heading;
+		about.querySelector("p").textContent = data.about_slide.description; // targeting the italicized part
+		about.querySelector("h3").textContent = data.about_slide.credits_heading;
+		// Credit paragraph (Icon link)
+		const creditP = about.querySelectorAll("p")[1];
+		creditP.innerHTML = `${data.about_slide.credits_description.split("Icons8")[0]}<a target="_blank" href="https://icons8.com">Icons8</a>${data.about_slide.credits_description.split("Icons8")[1]}`;
+
+		// --- 7. Terms & Privacy Slide ---
+		const privacy = document.getElementById("slide-terms-and-privacy");
+		privacy.querySelector("h2").textContent = data.privacy_slide.heading;
+		privacy.querySelector("p").textContent = data.privacy_slide.description;
+		const privacyBtns = privacy.querySelectorAll(".cta-button");
+		privacyBtns[0].textContent = data.privacy_slide.btn_terms;
+		privacyBtns[1].textContent = data.privacy_slide.btn_privacy;
+
+		// --- 8. Update Toggle Button UI ---
+		document.getElementById("lang-icon").src = langConfig[lang].icon;
+		document.getElementById("lang-toggle").ariaLabel = langConfig[lang].label;
+
+		currentLang = lang;
+		localStorage.setItem("preferredLang", lang);
+	} catch (error) {
+		console.error("Error loading language file:", error);
+	}
+}
+
+// Event Listener
+document.getElementById("lang-toggle").addEventListener("click", () => {
+	const newLang = currentLang === "en" ? "ja" : "en";
+	updateLanguage(newLang);
+});
+
+// Init
+window.addEventListener("DOMContentLoaded", () => {
+	updateLanguage(currentLang);
+});

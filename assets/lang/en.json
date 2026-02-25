@@ -1,0 +1,54 @@
+{
+	"common": {
+		"site_title": "Impress Magazine",
+		"theme_toggle": "Change Theme",
+		"lang_toggle": "Change Language",
+		"snow_toggle": "Toggle Snow",
+		"prev_slide": "Previous Slide",
+		"next_slide": "Next Slide"
+	},
+	"nav": {
+		"home": "Impress Magazine",
+		"gallery": "Impress Gallery",
+		"latest": "Latest Issue",
+		"haiku": "English Haiku Contest",
+		"contact": "Contact",
+		"about": "About Impress",
+		"terms_privacy": "Terms of Use & Privacy Policy"
+	},
+	"home_slide": {
+		"title": "Impress Magazine",
+		"description": "Read all digital editions on this online app! Also, please check out our gallery for support materials.",
+		"btn_digital": "Impress Digital Edition",
+		"btn_gallery": "Impress Gallery"
+	},
+	"latest_slide": {
+		"heading": "Read the Latest Issue!",
+		"issue_name": "Impress: Winter 2026",
+		"cta_button": "Impress: Winter 2026"
+	},
+	"haiku_slide": {
+		"heading": "Impress English Haiku Contest",
+		"description": "Check out our Haiku Contest!",
+		"cta_button": "Haiku Contest Page"
+	},
+	"contact_slide": {
+		"heading": "Contact Us",
+		"description": "Any questions or comments? Do you have suggestions or ideas? We'd love to hear from you.",
+		"link_text": "Contact Form",
+		"description_suffix": "Send us a message using our",
+		"cta_button": "Contact Form"
+	},
+	"about_slide": {
+		"heading": "About Impress Magazine",
+		"description": "Impress Magazine is a magazine for young English learners, created with love by teachers and students in Isesaki City, Japan.",
+		"credits_heading": "Other Credits",
+		"credits_description": "The Impress website and online assets were produced by Isesaki English Media. Icons are by Icons8."
+	},
+	"privacy_slide": {
+		"heading": "Terms of Use and Privacy Policy",
+		"description": "Please read our Terms of Use and Privacy Policy.",
+		"btn_terms": "Terms of Use",
+		"btn_privacy": "Privacy Policy"
+	}
+}
