@@ -1,4 +1,4 @@
-const CACHE_NAME = "impress-v2";
+const CACHE_NAME = "impress-v3";
 const STATIC_ASSETS = [
 	"/",
 	"/index.html",
@@ -7,6 +7,11 @@ const STATIC_ASSETS = [
 	"/assets/home/icon.png",
 	"/assets/home/icon-512.png",
 	"/assets/home/icon-192.png",
+	"/assets/lang/en.json",
+	"/assets/lang/ja.json",
+	"/assets/fonts/kleeone_regular.ttf",
+	"/assets/home/icons8-torii-94.png",
+	"/assets/home/icons8-us-capitol-94.png",
 ];
 
 // 1. Install - Pre-cache only the UI shell

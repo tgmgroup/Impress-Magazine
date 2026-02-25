@@ -330,13 +330,18 @@ body {
 .logo-section {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: center; /* This is the key */
 	align-items: center;
 	width: 100%;
+	flex: 1; /* Allow it to expand to fill the slide */
+	height: 100%;
 }
 
 .slide.active {
 	display: flex;
+	flex: 1; /* Add this */
+	width: 100%;
+	height: 100%;
 }
 
 /* Call to Action Button in Slides */
@@ -751,6 +756,8 @@ a.button {
 		bottom: auto;
 		width: 100%;
 		height: 55px; /* Mobile nav height */
+		min-height: 44px;
+		min-width: 44px;
 		flex-direction: row;
 		justify-content: space-around;
 		align-items: center;

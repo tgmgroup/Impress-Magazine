@@ -12,6 +12,12 @@
 		<link rel="manifest" href="manifest.json" />
 		<meta name="theme-color" content="#1a1a1a" />
 		<link rel="apple-touch-icon" href="assets/home/icon.png" />
+
+		<script>
+			if ("serviceWorker" in navigator) {
+				navigator.serviceWorker.register("/sw.js");
+			}
+		</script>
 		<script>
 			(function () {
 				try {
@@ -37,61 +43,99 @@
 		<nav id="icon-nav">
 			<a
 				href="#"
-				aria-label="Impress Magazine"
 				class="slide-nav-trigger"
 				data-target-slide="slide-home"
-				><img src="assets/home/icon.png"
-			/></a>
-			<a href="https://in.isesaki.in/impress-gallery" aria-label="Gallery"
-				><img src="assets/home/icons8-gallery-94.png"
-			/></a>
+				data-i18n-nav="home"
+				aria-label="Impress Magazine"
+			>
+				<img src="assets/home/icon.png" alt="" />
+			</a>
+
+			<a
+				href="https://in.isesaki.in/impress-gallery"
+				target="_blank"
+				rel="noopener"
+				data-i18n-nav="gallery"
+				aria-label="Gallery"
+			>
+				<img src="assets/home/icons8-gallery-94.png" alt="" />
+			</a>
+
 			<a
 				href="#"
-				aria-label="Latest Issue"
 				class="slide-nav-trigger"
 				data-target-slide="slide-latest"
-				><img src="assets/home/icons8-magazine-94.png"
-			/></a>
+				data-i18n-nav="latest"
+				aria-label="Latest Issue"
+			>
+				<img src="assets/home/icons8-magazine-94.png" alt="" />
+			</a>
+
 			<a
 				href="#"
-				aria-label="Haiku Contest"
 				class="slide-nav-trigger"
 				data-target-slide="slide-haiku"
-				><img src="assets/home/icons8-prize-94.png"
-			/></a>
+				data-i18n-nav="haiku"
+				aria-label="Haiku Contest"
+			>
+				<img src="assets/home/icons8-prize-94.png" alt="" />
+			</a>
+
 			<a
 				href="#"
-				aria-label="Contact"
 				class="slide-nav-trigger"
 				data-target-slide="slide-contact"
-				><img src="assets/home/icons8-office-phone-94.png"
-			/></a>
+				data-i18n-nav="contact"
+				aria-label="Contact"
+			>
+				<img src="assets/home/icons8-office-phone-94.png" alt="" />
+			</a>
+
 			<a
 				href="#"
-				aria-label="About"
 				class="slide-nav-trigger"
 				data-target-slide="slide-about"
-				><img src="assets/home/icons8-info-94.png"
-			/></a>
+				data-i18n-nav="about"
+				aria-label="About"
+			>
+				<img src="assets/home/icons8-info-94.png" alt="" />
+			</a>
+
 			<a
 				href="#"
-				aria-label="Terms of Use and Privacy Policy"
 				class="slide-nav-trigger"
 				data-target-slide="slide-terms-and-privacy"
-				><img src="assets/home/icons8-privacy-policy-94.png"
-			/></a>
+				data-i18n-nav="terms_privacy"
+				aria-label="Terms of Use and Privacy Policy"
+			>
+				<img src="assets/home/icons8-privacy-policy-94.png" alt="" />
+			</a>
 
-			<button id="theme-toggle" aria-label="Switch theme"></button>
+			<button
+				id="theme-toggle"
+				data-i18n-nav="theme_toggle"
+				aria-label="Switch theme"
+			></button>
 
 			<button
 				id="lang-toggle"
-				onclick="document.location = 'index-jp.html'"
+				data-i18n-nav="lang_toggle"
 				aria-label="Switch Language"
 			>
-				<img src="assets/home/icons8-torii-94.png" alt="Japanese" />
+				<img
+					id="lang-icon"
+					src="assets/home/icons8-torii-94.png"
+					alt="Toggle Language"
+				/>
 			</button>
 
-			<button id="snow-toggle" aria-label="Toggle Snowflakes">&#x2744;</button>
+			<button
+				id="snow-toggle"
+				data-i18n-nav="snow_toggle"
+				aria-label="Toggle Snowflakes"
+			>
+				&#x2744;
+			</button>
 		</nav>
 
 		<div id="container">

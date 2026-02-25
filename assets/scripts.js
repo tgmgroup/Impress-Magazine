@@ -645,17 +645,18 @@ async function updateLanguage(lang) {
 		document.getElementById("prev-slide").ariaLabel = data.common.prev_slide;
 		document.getElementById("next-slide").ariaLabel = data.common.next_slide;
 
-		// Nav Icons aria-labels
-		const navLinks = document.querySelectorAll("#icon-nav .slide-nav-trigger");
-		navLinks.forEach((link) => {
-			const target = link.getAttribute("data-target-slide");
-			if (target === "slide-home") link.ariaLabel = data.nav.home;
-			if (target === "slide-latest") link.ariaLabel = data.nav.latest;
-			if (target === "slide-haiku") link.ariaLabel = data.nav.haiku;
-			if (target === "slide-contact") link.ariaLabel = data.nav.contact;
-			if (target === "slide-about") link.ariaLabel = data.nav.about;
-			if (target === "slide-terms-and-privacy")
-				link.ariaLabel = data.nav.terms_privacy;
+		// Inside updateLanguage(lang) function:
+		const navElements = document.querySelectorAll("[data-i18n-nav]");
+		navElements.forEach((el) => {
+			const key = el.getAttribute("data-i18n-nav");
+			// Update aria-label for accessibility
+			if (data.nav[key]) {
+				el.ariaLabel = data.nav[key];
+			}
+			// If it's the specific common buttons like theme/snow
+			if (data.common[key]) {
+				el.ariaLabel = data.common[key];
+			}
 		});
 
 		// --- 2. Home Slide ---
