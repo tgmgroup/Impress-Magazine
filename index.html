@@ -2,22 +2,51 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title data-i18n="doc_title">Impress Magazine</title>
-		<link rel="stylesheet" href="assets/styles.css" />
-		<link rel="icon" type="image/x-icon" href="assets/home/icon.png" />
-		<link id="favicon" rel="shortcut icon" href="assets/home/icon.png" />
 
-		<script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
 		<link rel="manifest" href="manifest.json" />
-		<meta name="theme-color" content="#1a1a1a" />
-		<link rel="apple-touch-icon" href="assets/home/icon.png" />
+
+		<meta
+			name="theme-color"
+			content="#f8f8f8"
+			media="(prefers-color-scheme: light)"
+		/>
+		<meta
+			name="theme-color"
+			content="#1a1a1a"
+			media="(prefers-color-scheme: dark)"
+		/>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		/>
+		<meta name="apple-mobile-web-app-title" content="Impress" />
+		<meta
+			name="apple-itunes-app"
+			content="app-id=YOUR_APP_ID, app-clip-bundle-id=com.isesaki.impress.Clip"
+		/>
+
+		<link rel="stylesheet" href="assets/styles.css" />
+		<link rel="icon" type="image/png" href="assets/home/icon.png" />
+		<link rel="apple-touch-icon" href="assets/home/apple-touch-icon.png" />
 
 		<script>
 			if ("serviceWorker" in navigator) {
-				navigator.serviceWorker.register("/sw.js");
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+						.register("/sw.js")
+						.then((reg) => console.log("SW registered!", reg))
+						.catch((err) => console.log("SW failed:", err));
+				});
 			}
 		</script>
+
 		<script>
 			(function () {
 				try {
@@ -27,14 +56,11 @@
 					).matches;
 					if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
 						document.documentElement.classList.add("dark");
-					} else if (savedTheme === "light") {
-						document.documentElement.classList.remove("dark");
 					} else {
-						// Default to dark if nothing set and system isn't dark
-						document.documentElement.classList.add("dark");
+						document.documentElement.classList.remove("dark");
 					}
 				} catch (e) {
-					console.error("Error applying initial theme class:", e);
+					console.error("Theme Error:", e);
 				}
 			})();
 		</script>
@@ -241,6 +267,13 @@
 							English Media. Icons were made by
 							<a target="_blank" href="https://icons8.com">Icons8</a>.
 						</p>
+						<button
+							id="install-button"
+							class="cta-button"
+							style="display: none; margin-top: 20px"
+						>
+							Install Impress App
+						</button>
 					</div>
 
 					<div class="slide" id="slide-terms-and-privacy">

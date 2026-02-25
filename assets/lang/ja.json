@@ -40,10 +40,11 @@
 		"cta_button": "お問い合わせフォーム"
 	},
 	"about_slide": {
-		"heading": "インプレスマガジンについて",
-		"description": "インプレスマガジンは、伊勢崎市の先生と生徒が愛情を込めて作る、若い英語学習者のための雑誌です。",
-		"credits_heading": "その他のクレジット",
-		"credits_description": "インプレスのウェブサイトとオンラインアセットはいせさきイングリッシュメディアが制作しました。アイコンはIcons8によるものです。"
+		"heading": "インプレスについて",
+		"description": "<i>インプレスマガジン</i>は、伊勢崎市の先生と生徒が愛情を込めて作る、若い英語学習者のための雑誌です。",
+		"credits_heading": "クレジット",
+		"credits_description": "アイコン提供：Icons8",
+		"install_button": "アプリをインストール"
 	},
 	"privacy_slide": {
 		"heading": "利用規約とプライバシーポリシー",

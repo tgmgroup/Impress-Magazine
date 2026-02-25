@@ -1,0 +1,27 @@
+{
+	"applinks": {
+		"details": [
+			{
+				"appIDs": [
+					"TEAM_ID.com.isesaki.impress"
+				],
+				"components": [
+					{
+						"/": "/*",
+						"comment": "Matches all paths for the magazine"
+					}
+				]
+			}
+		]
+	},
+	"webcredentials": {
+		"apps": [
+			"TEAM_ID.com.isesaki.impress"
+		]
+	},
+	"appclips": {
+		"apps": [
+			"TEAM_ID.com.isesaki.impress.Clip"
+		]
+	}
+}

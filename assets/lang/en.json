@@ -40,10 +40,11 @@
 		"cta_button": "Contact Form"
 	},
 	"about_slide": {
-		"heading": "About Impress Magazine",
-		"description": "Impress Magazine is a magazine for young English learners, created with love by teachers and students in Isesaki City, Japan.",
-		"credits_heading": "Other Credits",
-		"credits_description": "The Impress website and online assets were produced by Isesaki English Media. Icons are by Icons8."
+		"heading": "About Impress",
+		"description": "<i>Impress Magazine</i> is a magazine for young English learners, created with love by teachers and students in Isesaki City, Japan.",
+		"credits_heading": "Credits",
+		"credits_description": "Icons by Icons8",
+		"install_button": "Install Impress App"
 	},
 	"privacy_slide": {
 		"heading": "Terms of Use and Privacy Policy",

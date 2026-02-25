@@ -7,13 +7,13 @@
 
 @font-face {
 	font-family: "Klee One";
-	src: url("assets/fonts/kleeone_regular.ttf") format("truetype");
+	src: url("./fonts/kleeone_regular.ttf") format("truetype");
 	font-display: swap; /* Improves perceived performance */
 }
 
 @font-face {
 	font-family: "Noto Sans JP";
-	src: url("assets/fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+	src: url("./fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
 	font-weight: 100;
 	font-style: normal;
 	font-display: swap; /* Improves perceived performance */
@@ -136,6 +136,7 @@ body {
 		color 0.3s ease,
 		padding 0.3s ease;
 	padding-left: 60px; /* Account for fixed desktop nav */
+	overscroll-behavior-y: contain; /* Prevents accidental refresh on swipe down */
 }
 
 /* --- Navigation Bar (Desktop - Default) --- */
@@ -764,7 +765,17 @@ a.button {
 		padding: 0 10px;
 		gap: 5px;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+		/* Use 'safe-area-inset' variables to add padding only where the notch/bar is */
+		padding-bottom: calc(10px + env(safe-area-inset-bottom));
+		padding-left: env(safe-area-inset-left);
+		padding-right: env(safe-area-inset-right);
 	}
+
+	#slide-home,
+	.slide {
+		padding-top: env(safe-area-inset-top);
+	}
+
 	#theme-toggle,
 	#snow-toggle {
 		margin-top: 0; /* Reset margin */
