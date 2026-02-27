@@ -4,7 +4,9 @@
 		"target": {
 			"namespace": "android_app",
 			"package_name": "com.isesaki.impress_magazine",
-			"sha256_cert_fingerprints": ["YOUR_SHA256_FINGERPRINT_HERE"]
+			"sha256_cert_fingerprints": [
+				"FD:B7:B4:2F:E3:4A:A5:BD:E6:44:9C:24:5F:AC:2E:9C:BF:80:47:A2:53:46:F3:23:A1:CC:EB:F8:AE:FC:60:70"
+			]
 		}
 	}
 ]
