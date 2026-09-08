@@ -1,4 +1,4 @@
-const CACHE_NAME = "impress-v6"; // Incremented version to force update
+const CACHE_NAME = "impress-v09082026t1508"; // Incremented version to force update
 const OFFLINE_URL = "/offline.html";
 
 const STATIC_ASSETS = [
